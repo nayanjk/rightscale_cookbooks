@@ -28,5 +28,5 @@ template "/etc/init.d/php-cgi" do
 end
 
 service "php-cgi" do
-  action :restart
+  action :start
 end

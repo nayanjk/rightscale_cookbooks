@@ -1,31 +1,31 @@
 {
-  "version": "0.0.1",
-  "replacing": {
+  "attributes": {
   },
   "recommendations": {
   },
-  "attributes": {
-  },
+  "description": "Installs/Configures inmobi_fastcgi",
+  "version": "0.0.1",
   "platforms": {
   },
-  "providing": {
-  },
-  "suggestions": {
-  },
-  "license": "All rights reserved",
-  "maintainer_email": "YOUR_EMAIL",
   "maintainer": "YOUR_COMPANY_NAME",
-  "recipes": {
-    "inmobi_fastcgi::default": "Installs fast cgi server."
-  },
   "groupings": {
   },
-  "conflicting": {
+  "suggestions": {
   },
   "dependencies": {
     "rightscale": ">= 0.0.0"
   },
+  "conflicting": {
+  },
+  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
   "name": "inmobi_fastcgi",
-  "description": "Installs/Configures inmobi_fastcgi",
-  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n"
+  "providing": {
+  },
+  "recipes": {
+    "inmobi_fastcgi::default": "Installs fast cgi server."
+  },
+  "replacing": {
+  },
+  "license": "All rights reserved",
+  "maintainer_email": "YOUR_EMAIL"
 }
