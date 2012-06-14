@@ -71,7 +71,7 @@ if var == 1
      log "compiling Thrift ....."
      bash "compile thrift" do
      code <<-EOS
-     tar -xzf Thrift.tar.gz} -C /tmp
+     tar -xzf Thrift.tar.gz -C /tmp
      cd /tmp/Thrift-0.5.0
      python setup.py install
      EOS
