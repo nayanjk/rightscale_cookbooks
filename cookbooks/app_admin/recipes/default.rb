@@ -65,7 +65,8 @@ end
 if var == 1
      log "copying Thrift file from appkg1"
      remote_file "Chef::Config[:file_cache_path]/Thrift.tar.gz" do
-     url 'http://appkg1.ev1.inmobi.com/Thrift.tar.gz'
+     source "http://appkg1.ev1.inmobi.com/"
+     action :create_if_missing
      end
 
     log "compiling Thrift ....."
