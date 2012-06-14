@@ -63,20 +63,27 @@ template "/etc/init.d/django" do
   mode 0755
 end
 if var == 1
-     log "copying Thrift file from appkg1"
-     code <<-EOH
-      wget http://appkg1.ev1.inmobi.com/Thrift.tar.gz
-      EOH
 
-     log "compiling Thrift ....."
-     bash "compile thrift" do
-     code <<-EOS
-     tar -xzf Thrift.tar.gz -C /tmp
-     cd /tmp/Thrift-0.5.0
-     python setup.py install
-     EOS
+     log "copying Thrift file from appkg1"
+
+     remote_file "/tmp/Thrift.tar.gz" do
+     source "http://appkg1.ev1.inmobi.com/Thrift.tar.gz"
+     notifies :run, "bash[install_program]", :immediately
+
+     log "Installing Thrift"
+
+     bash "install_program" do
+     user "root"
+     cwd "/tmp"
+     code <<-EOH
+     tar -zxf Thrift.tar.gz
+     (cd Thrift-0.5.0/ && python setup.py install)
+     EOH
+     action :nothing
      end
+
 end
+
 service "django" do
  action :start
 end
