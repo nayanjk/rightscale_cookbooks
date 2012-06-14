@@ -2,7 +2,7 @@
 # Cookbook Name:: app_admin
 # Recipe:: default
 #
-# Copyright 2012, YOUR_COMPANY_NAME
+# Copyright 2012, Nayan
 #
 # All rights reserved - Do Not Redistribute
 
@@ -62,15 +62,17 @@ template "/etc/init.d/django" do
   group "root"
   mode 0755
 end
+
+#Install thrift if Its admin M3
 if var == 1
 
-     log "copying Thrift file from appkg1"
+     log "copying Thrift file from appkg1.ev1.inmobi.com"
 
      remote_file "/tmp/Thrift.tar.gz" do
      source "http://appkg1.ev1.inmobi.com/Thrift.tar.gz"
      end
 
-     log "ectracting Thrift"
+     log "extracting Thrift"
     
      execute "extract thrift" do
      command <<-COMMAND
