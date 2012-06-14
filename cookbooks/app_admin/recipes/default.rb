@@ -41,14 +41,14 @@ when "ubuntu", "debian"
       #"java-gcj-compat-dev",
       "python-psycopg2",            
       "python-flup",
-      "python-package-1336461179",
-      "django-1.2-1284962466",
+      "python-package",
+      "django",
       "python-beautifulsoup",
       "python-cheetah",
-      "inmobi-django-admin-1.1-1339507208",
-      "inmobi-django-admin-css-1.1-1339497392",
-      "inmobi-m3admin-config-0.2-1339506011",
-      "inmobi-django-sorting-pagination-modules-0.1-1309342237",
+      "inmobi-django-admin",
+      "inmobi-django-admin-css",
+      "inmobi-m3admin-config",
+      "inmobi-django-sorting-pagination-modules",
 
     ]
   end
