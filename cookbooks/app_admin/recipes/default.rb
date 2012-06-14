@@ -34,8 +34,8 @@ when "ubuntu", "debian"
       "django",
       "python-beautifulsoup",
       "python-cheetah",
-      "inmobi-django-admin",
-      "inmobi-django-admin-css",
+      "Inmobi-django-admin",
+      "Inmobi-django-admin-css",
       "inmobi-m3admin-config",
       "inmobi-django-sorting-pagination-modules",
 
