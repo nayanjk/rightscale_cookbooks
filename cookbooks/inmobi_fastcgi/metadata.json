@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+  },
+  "groupings": {
+  },
+  "replacing": {
+  },
+  "providing": {
+  },
+  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
+  "recipes": {
+  },
+  "description": "Installs/Configures inmobi_fastcgi",
+  "attributes": {
+  },
+  "license": "All rights reserved",
+  "conflicting": {
+  },
+  "suggestions": {
+  },
+  "maintainer_email": "YOUR_EMAIL",
+  "name": "inmobi_fastcgi",
+  "platforms": {
+  },
+  "version": "0.0.1",
+  "maintainer": "YOUR_COMPANY_NAME",
+  "recommendations": {
+  }
+}
