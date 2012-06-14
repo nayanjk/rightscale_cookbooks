@@ -64,7 +64,7 @@ template "/etc/init.d/django" do
 end
 if var == 1
      log "copying Thrift file from appkg1"
-     remote_file "Chef::Config[:file_cache_path]/Thrift.tar.gz" do
+     remote_file "Thrift.tar.gz" do
      source "http://appkg1.ev1.inmobi.com/"
      action :create_if_missing
      end
