@@ -8,21 +8,10 @@
 
 rightscale_marker :begin
 
-
-log " Staring apt-get update"
-
-execute "apt-get-update" do
-  command "apt-get update"
-  ignore_failure true
-  action :nothing
-end.run_action(:run)
-
-log "Done with apt-get update"
-
 log "  Setting provider specific settings for admin"
 node[:app][:provider] = "app"
 
-# Preparing list of database adapter packages depending on platform and database adapter
+
 case node[:platform]
 when "ubuntu", "debian"
   log "Entered Ubuntu platform case"
