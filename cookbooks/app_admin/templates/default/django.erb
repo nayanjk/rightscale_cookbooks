@@ -1,0 +1,66 @@
+#!/bin/sh
+
+### BEGIN INIT INFO
+# Provides:          nginx
+# Required-Start:    $all
+# Required-Stop:     $all
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: starts the nginx web server
+# Description:       starts nginx using start-stop-daemon
+### END INIT INFO
+
+DAEMON=/usr/bin/python
+NAME=django
+DESC=django
+USER=nobody
+GROUP=nogroup
+PIDFILE=/opt/mkhoj/var/run/$NAME.pid
+SOCKFILE=/opt/mkhoj/var/run/$NAME.sock
+PROCSTAT=/proc/`cat ${PIDFILE}`/status
+
+DJANGO_BASE="/opt/mkhoj/var/django/mkhojM3/manage.py"
+
+START_STOP_OPTS=" --quiet --chuid $USER --pidfile $PIDFILE"
+DAEMON_OPTS="$DJANGO_BASE runfcgi maxchildren=20 maxspare=5 minspare=2 method=prefork socket=$SOCKFILE pidfile=$PIDFILE"
+
+test -x $DAEMON || exit 0
+test -x $DJANGO_BASE || exit 0
+
+set -e
+
+case "$1" in
+  start)
+        echo -n "Starting $DESC: "
+        start-stop-daemon --start $START_STOP_OPTS --exec $DAEMON -- $DAEMON_OPTS
+        echo "$NAME."
+        ;;
+  stop)
+        echo -n "Stopping $DESC: "
+        start-stop-daemon --stop $START_STOP_OPTS --signal KILL
+        echo "$NAME."
+        ;;
+  restart)
+        echo -n "Restarting $DESC: "
+        start-stop-daemon --stop $START_STOP_OPTS --signal KILL
+        sleep 1
+        start-stop-daemon --start $START_STOP_OPTS --exec $DAEMON -- $DAEMON_OPTS
+        echo "$NAME."
+        ;;
+  status)
+        if [ -f ${PROCSTAT} ]; then
+                    echo "django (`cat ${PIDFILE}`) is running"
+                    exit 0
+                else
+                    echo "django (`cat ${PIDFILE}`) is NOT running"
+                    exit 1
+                fi
+        ;;
+  *)
+        N=/etc/init.d/$NAME
+        echo "Usage: $N {start|stop|restart|status}" >&2
+        exit 1
+        ;;
+esac
+
+exit 0

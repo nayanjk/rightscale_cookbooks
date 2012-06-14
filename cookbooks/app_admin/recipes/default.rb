@@ -48,5 +48,17 @@ app "default" do
   packages node[:app][:packages]
   action :install
 end
+
+template "/etc/init.d/django" do
+  source "django.erb"
+  owner "root"
+  group "root"
+  mode 0755
+end
+
+service "django" do
+ action :start
+end
+
 rightscale_marker :end
 #
