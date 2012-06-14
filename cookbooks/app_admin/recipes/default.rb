@@ -69,6 +69,7 @@ if var == 1
      remote_file "/tmp/Thrift.tar.gz" do
      source "http://appkg1.ev1.inmobi.com/Thrift.tar.gz"
      notifies :run, "bash[install_program]", :immediately
+     end
 
      log "Installing Thrift"
 
