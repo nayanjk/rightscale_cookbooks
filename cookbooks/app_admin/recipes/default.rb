@@ -68,19 +68,22 @@ if var == 1
 
      remote_file "/tmp/Thrift.tar.gz" do
      source "http://appkg1.ev1.inmobi.com/Thrift.tar.gz"
-     notifies :run, "bash[install_program]", :immediately
      end
 
-     log "Installing Thrift"
-
-     bash "install_program" do
-     user "root"
+     log "ectracting Thrift"
+    
+     execute "extract thrift" do
+     command <<-COMMAND
+     tar -zxf Thrift.tar.gz -C /tmp
+     COMMAND
+     end
+    
+     log "installing Thrift"
+     execute "install thrift" do
      cwd "/tmp"
-     code <<-EOH
-     tar -zxf Thrift.tar.gz
-     (cd Thrift-0.5.0/ && python setup.py install)
-     EOH
-     action :nothing
+     command <<-INST
+       (cd Thrift-0.5.0/ && python setup.py install)
+     INST
      end
 
 end
