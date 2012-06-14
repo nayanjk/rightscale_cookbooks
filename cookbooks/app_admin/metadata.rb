@@ -12,6 +12,6 @@ recipe  "app_admin::default", "Install m2 or m3 admin"
 attribute "app_admin/function",
   :display_name => "which admin M2 or M3",
   :description => "whether admin m2 or m3",
-  :choice => [ "M2", "M3"],
+  :choice => ["M2", "M3"],
   :recipes => ["app_admin::default"],
   :required => "required"

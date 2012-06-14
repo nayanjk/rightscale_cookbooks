@@ -5,7 +5,9 @@
 # RightScale Terms of Service available at http://www.rightscale.com/terms.php and,
 # if applicable, other agreements such as a RightScale Master Subscription Agreement.
 
-# Stop servicesaction :stop do
+# Stop services
+
+action :stop do
   log "  Running stop sequence"
   service "django" do
     action :stop
