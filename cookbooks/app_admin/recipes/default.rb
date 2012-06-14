@@ -31,6 +31,10 @@ when "ubuntu", "debian"
       "python-psycopg2",            
       "python-flup",
       "mkhoj-base",
+      "build-essential",
+      "python2.6-dev",
+      "libfftw3-dev",
+      "gcc",
       "Python-package",
       "django",
       "python-beautifulsoup",
@@ -41,7 +45,9 @@ when "ubuntu", "debian"
       "inmobi-django-sorting-pagination-modules",
 
     ]
+  var=1
   end
+  
 end
 app "default" do
   persist true
@@ -56,7 +62,21 @@ template "/etc/init.d/django" do
   group "root"
   mode 0755
 end
+if var == 1
+     log "copying Thrift file from appkg1"
+     remote_file "Chef::Config[:file_cache_path]/Thrift.tar.gz" do
+     url 'http://appkg1.ev1.inmobi.com/Thrift.tar.gz'
+     end
 
+    log "compiling Thrift ....."
+    bash "compile thrift" do
+    code <<-EOS
+    tar -xzf #{Chef::Config[:file_cache_path]/Thrift.tar.gz} --strip-components=1 -C /tmp
+    cd /tmp/Thrift-0.5.0
+    python setup.py install
+    EOS
+    end
+end
 service "django" do
  action :start
 end
