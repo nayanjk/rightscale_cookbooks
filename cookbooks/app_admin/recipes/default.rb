@@ -41,7 +41,7 @@ when "ubuntu", "debian"
       #"java-gcj-compat-dev",
       "python-psycopg2",            
       "python-flup",
-      "python-package",
+      "Python-package",
       "django",
       "python-beautifulsoup",
       "python-cheetah",
