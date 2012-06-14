@@ -64,19 +64,18 @@ template "/etc/init.d/django" do
 end
 if var == 1
      log "copying Thrift file from appkg1"
-     remote_file "Thrift.tar.gz" do
-     source "http://appkg1.ev1.inmobi.com/"
-     action :create_if_missing
-     end
+     code <<-EOH
+      wget http://appkg1.ev1.inmobi.com/Thrift.tar.gz
+      EOH
 
-    log "compiling Thrift ....."
-    bash "compile thrift" do
-    code <<-EOS
-    tar -xzf #{Chef::Config[:file_cache_path]/Thrift.tar.gz} --strip-components=1 -C /tmp
-    cd /tmp/Thrift-0.5.0
-    python setup.py install
-    EOS
-    end
+     log "compiling Thrift ....."
+     bash "compile thrift" do
+     code <<-EOS
+     tar -xzf Thrift.tar.gz} -C /tmp
+     cd /tmp/Thrift-0.5.0
+     python setup.py install
+     EOS
+     end
 end
 service "django" do
  action :start
