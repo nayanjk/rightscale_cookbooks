@@ -8,7 +8,7 @@
 
 rightscale_marker :begin
 
-
+node[:app_admin][:provider] = "app_admin"
 
 case node[:platform]
 when "ubuntu", "debian"
@@ -16,7 +16,7 @@ when "ubuntu", "debian"
   case node[:app_admin][:function]
   when "M2"
     log "Entered m2 admin type case"
-    node[:app][:packages] = [
+    node[:app_admin][:packages] = [
       "python-psycopg2",
       "python-flup",             
 
