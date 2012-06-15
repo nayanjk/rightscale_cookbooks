@@ -5,8 +5,6 @@ description      "Installs m2 or m3 admin"
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.rdoc'))
 version          "0.0.1"
 
-depends "app"
-
 recipe  "app_admin::default", "Install m2 or m3 admin"
 
 attribute "app_admin/function",
