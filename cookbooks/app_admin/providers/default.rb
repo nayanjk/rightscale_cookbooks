@@ -35,11 +35,24 @@ end
 
 
 #Installing specified packages
+
 action :install do
   packages = new_resource.packages
-  log "  Packages which will be installed: #{packages}"
+  log "The following packages will be installed: #{packages}"
+  v = ""
   packages .each do |p|
-    log "installing #{p}"
-    package p
+    if ( p =~ /(.*)=(.*)/ )
+       log "Version defined in #{p} so spliting"
+       p = $1
+       v = $2
+       package p do
+          version "#{v}"
+          log "Package is #{p} and version #{v}"
+          log "installing #{p} #{v}"
+       end
+    else
+       log "Package is #{p} and version is not defined"
+       package p
+    end
 end
 end

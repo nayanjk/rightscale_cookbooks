@@ -1,45 +1,45 @@
 {
-  "description": "Installs m2 or m3 admin",
-  "name": "app_admin",
-  "version": "0.0.1",
-  "recipes": {
-    "app_admin::default": "Install m2 or m3 admin"
+  "license": "Copyright RightScale, Inc. All rights reserved.",
+  "recommendations": {
   },
-  "replacing": {
-  },
-  "maintainer": "RightScale, Inc.",
-  "attributes": {
-    "app_admin/function": {
-      "display_name": "which admin M2 or M3",
-      "description": "whether admin m2 or m3",
-      "recipes": [
-        "app_admin::default"
-      ],
-      "calculated": false,
-      "type": "string",
-      "required": "required",
-      "choice": [
-        "M2",
-        "M3"
-      ]
-    }
+  "groupings": {
   },
   "providing": {
   },
-  "suggestions": {
+  "version": "0.0.1",
+  "attributes": {
+    "app_admin/function": {
+      "choice": [
+        "M2",
+        "M3"
+      ],
+      "required": "required",
+      "calculated": false,
+      "display_name": "which admin M2 or M3",
+      "type": "string",
+      "recipes": [
+        "app_admin::default"
+      ],
+      "description": "whether admin m2 or m3"
+    }
   },
-  "recommendations": {
-  },
+  "maintainer_email": "support@rightscale.com",
+  "long_description": "",
+  "name": "app_admin",
   "dependencies": {
     "app": ">= 0.0.0"
   },
-  "long_description": "",
-  "groupings": {
-  },
-  "conflicting": {
+  "maintainer": "RightScale, Inc.",
+  "replacing": {
   },
   "platforms": {
   },
-  "license": "Copyright RightScale, Inc. All rights reserved.",
-  "maintainer_email": "support@rightscale.com"
+  "recipes": {
+    "app_admin::default": "Install m2 or m3 admin"
+  },
+  "conflicting": {
+  },
+  "suggestions": {
+  },
+  "description": "Installs m2 or m3 admin"
 }
