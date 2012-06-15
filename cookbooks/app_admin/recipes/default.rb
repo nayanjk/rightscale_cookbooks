@@ -20,7 +20,7 @@ when "ubuntu", "debian"
       "python-psycopg2",
       "python-flup",
       "mkhoj-base",
-      "build-essentials",
+      "build-essential",
       "django=1.2-1284962466",
       "django-admin=1.1-1338212757",
       "django-admin-css=1.1-1338212757",
