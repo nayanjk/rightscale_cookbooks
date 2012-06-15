@@ -51,8 +51,8 @@ when "ubuntu", "debian"
 end
 app "default" do
   persist true
-  provider node[:app][:provider]
-  packages node[:app][:packages]
+  provider node[:app_admin][:provider]
+  packages node[:app_admin][:packages]
   action :install
 end
 
