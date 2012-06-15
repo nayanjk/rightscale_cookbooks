@@ -18,10 +18,14 @@ when "ubuntu", "debian"
     log "Entered m2 admin type case"
     node[:app_admin][:packages] = [
       "python-psycopg2",
-      "python-flup",             
-
-
-#"java-gcj-compat-dev",
+      "python-flup",
+      "mkhoj-base",
+      "build-essentials",
+      "django=1.2-1284962466",
+      "django-admin=1.1-1338212757",
+      "django-admin-css=1.1-1338212757",
+      "django-admin-tovs=1.1.0-1303200931",
+      "inmobi-email-package=1328263143",
     ]
   when "M3"
     node[:app_admin][:packages] = [
