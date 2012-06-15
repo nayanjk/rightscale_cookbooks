@@ -1,57 +1,57 @@
 {
-  "license": "Copyright RightScale, Inc. All rights reserved.",
-  "maintainer": "RightScale, Inc.",
-  "replacing": {
-  },
   "providing": {
   },
   "suggestions": {
   },
-  "platforms": {
-  },
-  "attributes": {
-    "app_admin/djangobase": {
-      "calculated": false,
-      "display_name": "Django base for M2 or M3",
-      "description": "base dir vaules",
-      "recipes": [
-
-      ],
-      "required": "recommended",
-      "choice": [
-
-      ],
-      "type": "string"
-    },
-    "app_admin/function": {
-      "calculated": false,
-      "display_name": "which admin M2 or M3",
-      "description": "whether admin m2 or m3",
-      "recipes": [
-        "app_admin::default"
-      ],
-      "required": "required",
-      "choice": [
-        "M2",
-        "M3"
-      ],
-      "type": "string"
-    }
-  },
-  "version": "0.0.1",
-  "description": "Installs m2 or m3 admin",
-  "maintainer_email": "support@rightscale.com",
-  "long_description": "",
-  "dependencies": {
-  },
-  "groupings": {
+  "license": "Copyright RightScale, Inc. All rights reserved.",
+  "replacing": {
   },
   "recipes": {
     "app_admin::default": "Install m2 or m3 admin"
   },
+  "maintainer_email": "support@rightscale.com",
+  "long_description": "",
+  "version": "0.0.1",
   "conflicting": {
+  },
+  "platforms": {
+  },
+  "name": "app_admin",
+  "groupings": {
   },
   "recommendations": {
   },
-  "name": "app_admin"
+  "description": "Installs m2 or m3 admin",
+  "maintainer": "RightScale, Inc.",
+  "attributes": {
+    "app_admin/function": {
+      "choice": [
+        "M2",
+        "M3"
+      ],
+      "recipes": [
+        "app_admin::default"
+      ],
+      "type": "string",
+      "calculated": false,
+      "required": "required",
+      "description": "whether admin m2 or m3",
+      "display_name": "which admin M2 or M3"
+    },
+    "app_admin/djangobase": {
+      "choice": [
+
+      ],
+      "recipes": [
+
+      ],
+      "type": "string",
+      "calculated": false,
+      "required": "recommended",
+      "description": "base dir vaules",
+      "display_name": "Django base for M2 or M3"
+    }
+  },
+  "dependencies": {
+  }
 }

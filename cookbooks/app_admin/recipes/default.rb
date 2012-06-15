@@ -58,17 +58,22 @@ app_admin "install_packages" do
   action :install
 end
 
-if var == 1
-[:app_admin][:djangobase] = "/opt/mkhoj/var/django/mkhojM3/manage.py"
-esle
-[:app_admin][:djangobase] = "/opt/mkhoj/var/django/mkhoj/manage.py"
-end
-
 template "/etc/init.d/django" do
   source "django.erb"
   owner "root"
   group "root"
   mode 0755
+  if var == 1
+  variables({ 
+    :base => "/opt/mkhoj/var/django/mkhojm3/manage.py", 
+  })
+  else
+  variables({
+    :base => "/opt/mkhoj/var/django/mkhoj/manage.py",
+  })
+  end
+
+
 end
 
 #Install thrift if Its admin M3
