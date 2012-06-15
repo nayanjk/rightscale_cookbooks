@@ -1,57 +1,57 @@
 {
-  "recipes": {
-    "app_admin::default": "Install m2 or m3 admin"
+  "providing": {
   },
-  "recommendations": {
-  },
-  "version": "0.0.1",
-  "conflicting": {
-  },
-  "maintainer": "RightScale, Inc.",
-  "name": "app_admin",
   "dependencies": {
   },
-  "long_description": "",
-  "suggestions": {
+  "description": "Installs m2 or m3 admin",
+  "groupings": {
   },
-  "license": "Copyright RightScale, Inc. All rights reserved.",
-  "maintainer_email": "support@rightscale.com",
+  "conflicting": {
+  },
+  "long_description": "",
   "attributes": {
-    "app_admin/function": {
-      "type": "string",
-      "recipes": [
-        "app_admin::default"
+    "app_admin/djangobase": {
+      "description": "base dir vaules",
+      "display_name": "Django base for M2 or M3",
+      "calculated": false,
+      "choice": [
+
       ],
+      "required": "recommended",
+      "recipes": [
+
+      ],
+      "type": "string"
+    },
+    "app_admin/function": {
+      "description": "whether admin m2 or m3",
       "display_name": "which admin M2 or M3",
-      "required": "required",
       "calculated": false,
       "choice": [
         "M2",
         "M3"
       ],
-      "description": "whether admin m2 or m3"
-    },
-    "app_admin/djangobase": {
-      "type": "string",
+      "required": "required",
       "recipes": [
-
+        "app_admin::default"
       ],
-      "display_name": "Django base for M2 or M3",
-      "required": "recommended",
-      "calculated": false,
-      "choice": [
-
-      ],
-      "description": "base dir vaules"
+      "type": "string"
     }
   },
   "replacing": {
   },
-  "providing": {
-  },
   "platforms": {
   },
-  "groupings": {
+  "maintainer": "RightScale, Inc.",
+  "recommendations": {
   },
-  "description": "Installs m2 or m3 admin"
+  "name": "app_admin",
+  "version": "0.0.1",
+  "suggestions": {
+  },
+  "license": "Copyright RightScale, Inc. All rights reserved.",
+  "maintainer_email": "support@rightscale.com",
+  "recipes": {
+    "app_admin::default": "Install m2 or m3 admin"
+  }
 }
