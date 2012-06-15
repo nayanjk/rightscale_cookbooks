@@ -8,8 +8,6 @@
 
 rightscale_marker :begin
 
-log "  Setting provider specific settings for admin"
-node[:app][:provider] = "app"
 
 
 case node[:platform]
@@ -26,7 +24,7 @@ when "ubuntu", "debian"
 #"java-gcj-compat-dev",
     ]
   when "M3"
-    node[:app][:packages] = [
+    node[:app_admin][:packages] = [
       #"java-gcj-compat-dev",
       "python-psycopg2",            
       "python-flup",
