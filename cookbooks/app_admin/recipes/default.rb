@@ -49,9 +49,9 @@ when "ubuntu", "debian"
   end
   
 end
-app "default" do
+
+app_admin "install_packages" do
   persist true
-  provider node[:app_admin][:provider]
   packages node[:app_admin][:packages]
   action :install
 end
