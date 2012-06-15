@@ -1,4 +1,4 @@
-#
+
 # Cookbook Name:: app_admin
 #
 # Copyright RightScale, Inc. All rights reserved.  All access and use subject to the
@@ -33,23 +33,22 @@ action :restart do
   action_start
 end
 
-
 #Installing specified packages
-
 action :install do
   packages = new_resource.packages
-  log "The following packages will be installed: #{packages}"
+  log " Packages which will be installed: #{packages}"
   v = ""
-  packages .each do |p|
+  packages.each do |p|
     if ( p =~ /(.*)=(.*)/ )
        log "Version defined in #{p} so spliting"
        p = $1
        v = $2
-          package p do
+       log "Package is #{p} and version #{v}"
+       log "installing #{p} #{v}"
+       package p do
           version "#{v}"
-         end
+       end
     else
-       log "Package is #{p} and version is not defined"
        package p
     end
 end
