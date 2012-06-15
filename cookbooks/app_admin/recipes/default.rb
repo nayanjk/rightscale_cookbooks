@@ -23,6 +23,7 @@ when "ubuntu", "debian"
       "build-essential",
       "django=1.2-1284962466",
       "django-admin=1.1-1338212757",
+      "inmobi-m2admin-config",
       "django-admin-css=1.1-1338212757",
       "django-admin-tovs=1.1.0-1303200931",
       "inmobi-email-package=1328263143",

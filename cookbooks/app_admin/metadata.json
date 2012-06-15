@@ -1,57 +1,57 @@
 {
-  "providing": {
-  },
-  "suggestions": {
-  },
-  "license": "Copyright RightScale, Inc. All rights reserved.",
-  "replacing": {
-  },
   "recipes": {
     "app_admin::default": "Install m2 or m3 admin"
   },
-  "maintainer_email": "support@rightscale.com",
-  "long_description": "",
+  "recommendations": {
+  },
   "version": "0.0.1",
   "conflicting": {
   },
-  "platforms": {
-  },
-  "name": "app_admin",
-  "groupings": {
-  },
-  "recommendations": {
-  },
-  "description": "Installs m2 or m3 admin",
   "maintainer": "RightScale, Inc.",
+  "name": "app_admin",
+  "dependencies": {
+  },
+  "long_description": "",
+  "suggestions": {
+  },
+  "license": "Copyright RightScale, Inc. All rights reserved.",
+  "maintainer_email": "support@rightscale.com",
   "attributes": {
     "app_admin/function": {
+      "type": "string",
+      "recipes": [
+        "app_admin::default"
+      ],
+      "display_name": "which admin M2 or M3",
+      "required": "required",
+      "calculated": false,
       "choice": [
         "M2",
         "M3"
       ],
-      "recipes": [
-        "app_admin::default"
-      ],
-      "type": "string",
-      "calculated": false,
-      "required": "required",
-      "description": "whether admin m2 or m3",
-      "display_name": "which admin M2 or M3"
+      "description": "whether admin m2 or m3"
     },
     "app_admin/djangobase": {
+      "type": "string",
+      "recipes": [
+
+      ],
+      "display_name": "Django base for M2 or M3",
+      "required": "recommended",
+      "calculated": false,
       "choice": [
 
       ],
-      "recipes": [
-
-      ],
-      "type": "string",
-      "calculated": false,
-      "required": "recommended",
-      "description": "base dir vaules",
-      "display_name": "Django base for M2 or M3"
+      "description": "base dir vaules"
     }
   },
-  "dependencies": {
-  }
+  "replacing": {
+  },
+  "providing": {
+  },
+  "platforms": {
+  },
+  "groupings": {
+  },
+  "description": "Installs m2 or m3 admin"
 }
