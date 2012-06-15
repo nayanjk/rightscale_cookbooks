@@ -19,7 +19,7 @@ PIDFILE=/opt/mkhoj/var/run/$NAME.pid
 SOCKFILE=/opt/mkhoj/var/run/$NAME.sock
 PROCSTAT=/proc/`cat ${PIDFILE}`/status
 
-DJANGO_BASE="/opt/mkhoj/var/django/mkhojM3/manage.py"
+DJANGO_BASE=""<%= node[:app_admin][:djangobase] %>""
 
 START_STOP_OPTS=" --quiet --chuid $USER --pidfile $PIDFILE"
 DAEMON_OPTS="$DJANGO_BASE runfcgi maxchildren=20 maxspare=5 minspare=2 method=prefork socket=$SOCKFILE pidfile=$PIDFILE"

@@ -58,6 +58,12 @@ app_admin "install_packages" do
   action :install
 end
 
+if var == 1
+[:app_admin][:djangobase] = "/opt/mkhoj/var/django/mkhojM3/manage.py"
+esle
+[:app_admin][:djangobase] = "/opt/mkhoj/var/django/mkhoj/manage.py"
+end
+
 template "/etc/init.d/django" do
   source "django.erb"
   owner "root"

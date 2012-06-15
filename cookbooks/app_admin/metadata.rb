@@ -13,3 +13,9 @@ attribute "app_admin/function",
   :choice => ["M2", "M3"],
   :recipes => ["app_admin::default"],
   :required => "required"
+
+attribute "app_admin/djangobase",
+  :display_name => "Django base for M2 or M3",
+  :description => "base dir vaules",
+  :type => "string",
+  :required => "recommended"
