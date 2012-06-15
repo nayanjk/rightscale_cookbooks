@@ -36,7 +36,7 @@ when "ubuntu", "debian"
       "libfftw3-dev",
       "gcc",
       "Python-package",
-      "django",
+      "django=1.2-1284962466",
       "python-beautifulsoup",
       "python-cheetah",
       "Inmobi-django-admin",
