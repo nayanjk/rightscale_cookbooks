@@ -21,7 +21,7 @@ when "ubuntu", "debian"
       "python-flup",
       "mkhoj-base",
       "build-essential",
-      "django=1.2-1292500261",
+      "django=1.2-1284962466",
       "django-admin=1.1-1338212757",
       "inmobi-m2admin-config",
       "django-admin-css=1.1-1338212757",
