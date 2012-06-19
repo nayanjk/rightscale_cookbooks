@@ -1,96 +1,96 @@
 {
-  "recommendations": {
-  },
-  "platforms": {
-  },
-  "license": "Copyright RightScale, Inc. All rights reserved.",
-  "name": "app_admin",
-  "version": "0.0.1",
-  "providing": {
-  },
-  "maintainer_email": "support@rightscale.com",
-  "long_description": "",
-  "suggestions": {
-  },
-  "attributes": {
-    "app_admin/django_admin_package": {
-      "choice": [
-
-      ],
-      "calculated": false,
-      "description": "django admin package",
-      "required": "recommended",
-      "recipes": [
-        "app_admin::default"
-      ],
-      "type": "string",
-      "display_name": "Django admin packake with version"
-    },
-    "app_admin/djangobase": {
-      "choice": [
-
-      ],
-      "calculated": false,
-      "description": "base dir vaules",
-      "required": "recommended",
-      "recipes": [
-
-      ],
-      "type": "string",
-      "display_name": "Django base for M2 or M3"
-    },
-    "app_admin/django_admin_config": {
-      "choice": [
-
-      ],
-      "calculated": false,
-      "description": "django admin config",
-      "required": "recommended",
-      "recipes": [
-        "app_admin::default"
-      ],
-      "type": "string",
-      "display_name": "Django admin config with version"
-    },
-    "app_admin/django_admin_css": {
-      "choice": [
-
-      ],
-      "calculated": false,
-      "description": "django admin css",
-      "required": "recommended",
-      "recipes": [
-        "app_admin::default"
-      ],
-      "type": "string",
-      "display_name": "Django admin css with version"
-    },
-    "app_admin/function": {
-      "choice": [
-        "M2",
-        "M3"
-      ],
-      "calculated": false,
-      "description": "whether admin m2 or m3",
-      "required": "required",
-      "recipes": [
-        "app_admin::default"
-      ],
-      "type": "string",
-      "display_name": "which admin M2 or M3"
-    }
-  },
-  "conflicting": {
-  },
-  "description": "Installs m2 or m3 admin",
   "recipes": {
     "app_admin::default": "Install m2 or m3 admin"
   },
-  "groupings": {
-  },
-  "maintainer": "RightScale, Inc.",
+  "license": "Copyright RightScale, Inc. All rights reserved.",
+  "name": "app_admin",
   "replacing": {
   },
+  "providing": {
+  },
+  "recommendations": {
+  },
+  "maintainer_email": "support@rightscale.com",
+  "maintainer": "RightScale, Inc.",
+  "platforms": {
+  },
+  "long_description": "",
+  "description": "Installs m2 or m3 admin",
+  "attributes": {
+    "app_admin/djangobase": {
+      "calculated": false,
+      "recipes": [
+
+      ],
+      "required": "recommended",
+      "description": "base dir vaules",
+      "display_name": "Django base for M2 or M3",
+      "type": "string",
+      "choice": [
+
+      ]
+    },
+    "app_admin/function": {
+      "calculated": false,
+      "recipes": [
+        "app_admin::default"
+      ],
+      "required": "required",
+      "description": "whether admin m2 or m3",
+      "display_name": "which admin M2 or M3",
+      "type": "string",
+      "choice": [
+        "M2",
+        "M3"
+      ]
+    },
+    "app_admin/django_admin_css": {
+      "calculated": false,
+      "recipes": [
+        "app_admin::default"
+      ],
+      "required": "recommended",
+      "description": "django admin css",
+      "display_name": "Django admin css with version",
+      "type": "string",
+      "choice": [
+
+      ]
+    },
+    "app_admin/django_admin_package": {
+      "calculated": false,
+      "recipes": [
+        "app_admin::default"
+      ],
+      "required": "recommended",
+      "description": "django admin package",
+      "display_name": "Django admin packake with version",
+      "type": "string",
+      "choice": [
+
+      ]
+    },
+    "app_admin/django_admin_config": {
+      "calculated": false,
+      "recipes": [
+        "app_admin::default"
+      ],
+      "required": "recommended",
+      "description": "django admin config",
+      "display_name": "Django admin config with version",
+      "type": "string",
+      "choice": [
+
+      ]
+    }
+  },
   "dependencies": {
+  },
+  "suggestions": {
+  },
+  "version": "0.0.1",
+  "groupings": {
+  },
+  "conflicting": {
   }
 }

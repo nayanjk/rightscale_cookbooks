@@ -22,9 +22,9 @@ when "ubuntu", "debian"
       "mkhoj-base",
       "build-essential",
       "django=1.2-1284962466",
-      "django-admin=#{node[:app_admin][:django_admin_package]}",
-      "inmobi-m2admin-config=#{node[:app_admin][:django_admin_config]}",
-      "django-admin-css=#{node[:app_admin][:django_admin_css]}",
+      "#{node[:app_admin][:django_admin_package]}",
+      "#{node[:app_admin][:django_admin_config]}",
+      "#{node[:app_admin][:django_admin_css]}",
       "django-admin-tovs=1.1.0-1303200931",
       "inmobi-email-package=1328263143",
     ]
@@ -42,9 +42,9 @@ when "ubuntu", "debian"
       "django=1.2-1284962466",
       "python-beautifulsoup",
       "python-cheetah",
-      "Inmobi-django-admin",
-      "Inmobi-django-admin-css",
-      "inmobi-m3admin-config",
+      "#{node[:app_admin][:django_admin_package]}",
+      "#{node[:app_admin][:django_admin_config]}",
+      "#{node[:app_admin][:django_admin_css]}",
       "inmobi-django-sorting-pagination-modules",
 
     ]
@@ -66,7 +66,7 @@ template "/etc/init.d/django" do
   mode 0755
   if var == 1
   variables({ 
-    :base => "/opt/mkhoj/var/django/mkhojm3/manage.py", 
+    :base => "/opt/mkhoj/var/django/mkhojM3/manage.py", 
   })
   else
   variables({
