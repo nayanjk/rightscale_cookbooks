@@ -22,9 +22,9 @@ when "ubuntu", "debian"
       "mkhoj-base",
       "build-essential",
       "django=1.2-1284962466",
-      "django-admin=1.1-1338212757",
-      "inmobi-m2admin-config",
-      "django-admin-css=1.1-1338212757",
+      "django-admin=#{node[:app_admin][:django_admin_package]}",
+      "inmobi-m2admin-config=#{node[:app_admin][:django_admin_config]}",
+      "django-admin-css=#{node[:app_admin][:django_admin_css]}",
       "django-admin-tovs=1.1.0-1303200931",
       "inmobi-email-package=1328263143",
     ]
