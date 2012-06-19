@@ -80,10 +80,10 @@ end
 #Install thrift if Its admin M3
 if var == 1
 
-     log "copying Thrift file from appkg1.ev1.inmobi.com"
+     log "copying Thrift file from apppkg1.wc1.inmobi.com"
 
      remote_file "/tmp/Thrift.tar.gz" do
-     source "http://appkg1.ev1.inmobi.com/Thrift.tar.gz"
+     source "http://apppkg1.wc1.inmobi.com/Thrift.tar.gz"
      end
 
      log "extracting Thrift"
