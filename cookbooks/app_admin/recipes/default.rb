@@ -79,29 +79,10 @@ end
 
 #Install thrift if Its admin M3
 if var == 1
-
-     log "copying Thrift file from apppkg1.wc1.inmobi.com"
-
-     remote_file "/tmp/Thrift.tar.gz" do
-     source "http://apppkg1.wc1.inmobi.com/Thrift.tar.gz"
-     end
-
-     log "extracting Thrift"
-    
-     execute "extract thrift" do
-     command <<-COMMAND
-     tar -zxf Thrift.tar.gz -C /tmp
-     COMMAND
-     end
-    
-     log "installing Thrift"
-     execute "install thrift" do
-     cwd "/tmp"
-     command <<-INST
-       (cd Thrift-0.5.0/ && python setup.py install)
-     INST
-     end
-
+   app_admin "install_thrift" do
+   persist true
+  action :install_thrift
+end
 end
 
 service "django" do

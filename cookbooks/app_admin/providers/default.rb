@@ -53,3 +53,27 @@ action :install do
     end
 end
 end
+
+action :install_thrift do
+   log "copying Thrift file from apppkg1.wc1.inmobi.com"
+
+     remote_file "/tmp/Thrift.tar.gz" do
+     source "http://apppkg1.wc1.inmobi.com/Thrift.tar.gz"
+     end
+
+     log "extracting Thrift"
+    
+     execute "extract thrift" do
+     command <<-COMMAND
+     tar -zxf Thrift.tar.gz -C /tmp
+     COMMAND
+     end
+    
+     log "installing Thrift"
+     execute "install thrift" do
+     cwd "/tmp"
+     command <<-INST
+       (cd Thrift-0.5.0/ && python setup.py install)
+     INST
+     end  
+end
