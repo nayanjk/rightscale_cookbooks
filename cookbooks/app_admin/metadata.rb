@@ -20,23 +20,9 @@ attribute "app_admin/djangobase",
   :type => "string",
   :required => "recommended"
 
-attribute "app_admin/django_admin_package",
-  :display_name => "Django admin packake with version",
-  :description => "django admin package",
+attribute "app_admin/django_debians",
+  :display_name => "comma separated Django admin packages with version",
+  :description => "comma separated Django admin packages with version",
   :type => "string",
-  :recipes => ["app_admin::default"],
-  :required => "recommended"
-
-attribute "app_admin/django_admin_css",
-  :display_name => "Django admin css with version",
-  :description => "django admin css",
-  :type => "string",
-  :recipes => ["app_admin::default"],
-  :required => "recommended"
-
-attribute "app_admin/django_admin_config",
-  :display_name => "Django admin config with version",
-  :description => "django admin config",
-  :type => "string",
-  :recipes => ["app_admin::default"],
+  :recipes => ["app_admin::debinst"],
   :required => "recommended"

@@ -22,9 +22,6 @@ when "ubuntu", "debian"
       "mkhoj-base",
       "build-essential",
       "django=1.2-1284962466",
-      "#{node[:app_admin][:django_admin_package]}",
-      "#{node[:app_admin][:django_admin_config]}",
-      "#{node[:app_admin][:django_admin_css]}",
       "django-admin-tovs=1.1.0-1303200931",
       "inmobi-email-package=1328263143",
     ]
@@ -42,9 +39,6 @@ when "ubuntu", "debian"
       "django=1.2-1284962466",
       "python-beautifulsoup",
       "python-cheetah",
-      "#{node[:app_admin][:django_admin_package]}",
-      "#{node[:app_admin][:django_admin_config]}",
-      "#{node[:app_admin][:django_admin_css]}",
       "inmobi-django-sorting-pagination-modules",
 
     ]
@@ -83,10 +77,6 @@ if var == 1
    persist true
   action :install_thrift
 end
-end
-
-service "django" do
- action :start
 end
 
 rightscale_marker :end
