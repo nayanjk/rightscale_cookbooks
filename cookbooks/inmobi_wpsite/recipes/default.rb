@@ -9,15 +9,15 @@
 
 rightscale_marker :begin
 
-log "setting preeseed for mysql install"
+log "setting preseed for mysql install"
 
-template "/tmp/mysql.preeseed" do
+template "/tmp/mysql.preseed" do
    source "mysql.preseed.erb"
    owner "root"
    mode "0755"
    end
-execute "setting mysql preeseed " do
-   command "/tmp/mysql.preeseed"
+execute "setting mysql preseed " do
+   command "/tmp/mysql.preseed"
    action :nothing
    end
 
