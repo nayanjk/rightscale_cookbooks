@@ -9,6 +9,12 @@
 
 rightscale_marker :begin
 
+directory "/opt/mkhoj/html" do
+  owner "root"
+  mode 0755
+  recursive true
+  end
+
 log "setting preseed for mysql install"
 
 template "/tmp/mysql.preseed" do

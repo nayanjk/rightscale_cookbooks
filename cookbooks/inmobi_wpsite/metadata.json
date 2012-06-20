@@ -1,63 +1,63 @@
 {
+  "version": "0.0.1",
+  "conflicting": {
+  },
+  "dependencies": {
+  },
+  "providing": {
+  },
+  "license": "All rights reserved",
+  "suggestions": {
+  },
+  "maintainer": "YOUR_COMPANY_NAME",
+  "description": "Installs/Configures inmobi_wpsite",
+  "maintainer_email": "YOUR_EMAIL",
   "recipes": {
     "inmobi_wpsite::default": "configures mysql and wpmu"
   },
-  "recommendations": {
+  "platforms": {
   },
-  "description": "Installs/Configures inmobi_wpsite",
   "groupings": {
   },
   "attributes": {
-    "inmobi_wpsite/language": {
+    "inmobi_wpsite/mysql_root_password": {
+      "description": "enter mysql root password here",
+      "choice": [
+
+      ],
+      "type": "string",
+      "calculated": false,
+      "display_name": "Mysql Server Root Password",
       "recipes": [
 
       ],
-      "description": "which language site to configure",
-      "choice": [
-        "global",
-        "japanese"
-      ],
-      "calculated": false,
-      "display_name": "site language/country",
-      "type": "string",
       "recipies": [
         "inmobi_wpsite:default"
       ],
       "required": "required"
     },
-    "inmobi_wpsite/mysql_root_password": {
+    "inmobi_wpsite/language": {
+      "description": "which language site to configure",
+      "choice": [
+        "global",
+        "japanese"
+      ],
+      "type": "string",
+      "calculated": false,
+      "display_name": "site language/country",
       "recipes": [
 
       ],
-      "description": "enter mysql root password here",
-      "calculated": false,
-      "choice": [
-
-      ],
-      "display_name": "Mysql Server Root Password",
-      "type": "string",
       "recipies": [
         "inmobi_wpsite:default"
       ],
       "required": "required"
     }
   },
-  "conflicting": {
-  },
   "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
   "name": "inmobi_wpsite",
-  "maintainer_email": "YOUR_EMAIL",
-  "platforms": {
-  },
-  "maintainer": "YOUR_COMPANY_NAME",
-  "license": "All rights reserved",
   "replacing": {
   },
-  "suggestions": {
-  },
-  "version": "0.0.1",
-  "providing": {
-  },
-  "dependencies": {
+  "recommendations": {
   }
 }
