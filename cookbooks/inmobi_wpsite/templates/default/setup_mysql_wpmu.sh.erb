@@ -13,6 +13,6 @@ SET PASSWORD FOR 'root'@'localhost' = PASSWORD('<%= node[:inmobi_wpsite][:mysql_
 flush privileges;
 quit
 SQL`
-mysql -u $USER -p$PASSWORD $DBNAME< /tmp/#{node[:inmobi_wpsite][:language]}.sql
+mysql -u $USER -p$PASSWORD $DBNAME< /tmp/<%= node[:inmobi_wpsite][:language] %>.sql
 fi
 

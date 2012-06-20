@@ -1,63 +1,63 @@
 {
+  "platforms": {
+  },
+  "suggestions": {
+  },
+  "maintainer_email": "YOUR_EMAIL",
+  "providing": {
+  },
+  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
+  "recipes": {
+    "inmobi_wpsite::default": "configures mysql and wpmu"
+  },
+  "replacing": {
+  },
+  "conflicting": {
+  },
+  "recommendations": {
+  },
+  "maintainer": "YOUR_COMPANY_NAME",
+  "license": "All rights reserved",
   "version": "0.0.1",
+  "description": "Installs/Configures inmobi_wpsite",
+  "groupings": {
+  },
   "attributes": {
     "inmobi_wpsite/language": {
-      "type": "string",
+      "calculated": false,
       "display_name": "site language/country",
-      "recipies": [
-        "inmobi_wpsite:default"
-      ],
       "choice": [
         "global",
         "japanese"
       ],
-      "description": "which language site to configure",
+      "required": "required",
       "recipes": [
 
       ],
-      "required": "required",
-      "calculated": false
-    },
-    "inmobi_wpsite/mysql_root_password": {
-      "type": "string",
-      "display_name": "Mysql Server Root Password",
       "recipies": [
         "inmobi_wpsite:default"
       ],
+      "description": "which language site to configure",
+      "type": "string"
+    },
+    "inmobi_wpsite/mysql_root_password": {
+      "calculated": false,
+      "display_name": "Mysql Server Root Password",
       "choice": [
 
       ],
-      "description": "enter mysql root password here",
+      "required": "required",
       "recipes": [
 
       ],
-      "required": "required",
-      "calculated": false
+      "recipies": [
+        "inmobi_wpsite:default"
+      ],
+      "description": "enter mysql root password here",
+      "type": "string"
     }
-  },
-  "replacing": {
   },
   "dependencies": {
   },
-  "maintainer_email": "YOUR_EMAIL",
-  "name": "inmobi_wpsite",
-  "description": "Installs/Configures inmobi_wpsite",
-  "maintainer": "YOUR_COMPANY_NAME",
-  "recipes": {
-    "inmobi_wpsite::default": "configures mysql and wpmu"
-  },
-  "groupings": {
-  },
-  "conflicting": {
-  },
-  "suggestions": {
-  },
-  "license": "All rights reserved",
-  "providing": {
-  },
-  "recommendations": {
-  },
-  "platforms": {
-  },
-  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n"
+  "name": "inmobi_wpsite"
 }
