@@ -58,6 +58,7 @@ log " Packages which will be installed: #{packages}"
     else
        log "Package is #{p} and version is not defined"
        package p
+       options "--force-yes"
     end
   end
 end
