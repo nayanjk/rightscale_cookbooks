@@ -35,7 +35,19 @@ execute "setting mysql preseed " do
    action :nothing
    end
 
+node[:inmobi_wpsite][:packages] = [
+   "mysql-server",
+   "mkhoj-base",
+  ]
 
+log "installing mysql package"
+
+
+inmobi_wpsite "install_packages" do
+   persist true
+   packages node[:inmobi_wpsite][:packages]
+   action :install
+   end
 
 
 
@@ -49,19 +61,6 @@ template "/tmp/setup_mysql_mpmu.sh" do
 execute "setting mysql wpmu data " do
    command "/tmp/setup_mysql_wpmu.sh"
    action :nothing
-   end
-
-log "installing mysql package"
-
-node[:inmobi_wpsite][:packages] = [
-   "mkhoj-base",
-   "mysql-server",
-  ]
-
-inmobi_wpsite "install_packages" do
-   persist true
-   packages node[:inmobi_wpsite][:packages]
-   action :install
    end
 
 
