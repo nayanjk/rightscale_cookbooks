@@ -15,6 +15,14 @@ directory "/opt/mkhoj/html" do
   recursive true
   end
 
+
+
+inmobi_wpsite "install wpmu" do
+   persist true
+   action :install_wpmu
+   end
+
+
 log "setting preseed for mysql install"
 
 template "/tmp/mysql.preseed" do
@@ -24,6 +32,22 @@ template "/tmp/mysql.preseed" do
    end
 execute "setting mysql preseed " do
    command "/tmp/mysql.preseed"
+   action :nothing
+   end
+
+
+
+
+
+log "setting required mysql data for wpmu"
+
+template "/tmp/setup_mysql_mpmu.sh" do
+   source "setup_mysql_wpmu.sh.erb"
+   owner "root"
+   mode "0755"
+   end
+execute "setting mysql wpmu data " do
+   command "/tmp/setup_mysql_wpmu.sh"
    action :nothing
    end
 
@@ -40,10 +64,5 @@ inmobi_wpsite "install_packages" do
    action :install
    end
 
-
-inmobi_wpsite "install wpmu" do
-   persist true
-   action :install_wpmu
-   end
 
 rightscale_marker :end

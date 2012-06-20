@@ -78,6 +78,12 @@ action :install_wpmu do
      source "http://apppkg1.wc1.inmobi.com/#{node[:inmobi_wpsite][:language]}.tar.gz"
      end
 
+     
+     remote_file "/tmp/#{node[:inmobi_wpsite][:language]}.sql" do
+     source "http://apppkg1.wc1.inmobi.com/#{node[:inmobi_wpsite][:language]}.sql"
+     end
+
+
      log "extracting wpmu"
     
      execute "extract_wpmu" do
