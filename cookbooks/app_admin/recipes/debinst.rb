@@ -7,7 +7,7 @@ if node[:app_admin][:stopcmd] == nil || node[:app_admin][:startcmd] == nil
 end
 
 service "#{node[:app_admin][:service]}" do
-  start_command "#{node[:app_admin=][:startcmd]}"
+  start_command "#{node[:app_admin][:startcmd]}"
   stop_command "#{node[:app_admin][:stopcmd]}"
   action :nothing
 end
