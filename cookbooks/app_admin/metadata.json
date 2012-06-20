@@ -1,128 +1,128 @@
 {
-  "version": "0.0.1",
   "providing": {
   },
-  "name": "app_admin",
-  "replacing": {
+  "maintainer": "RightScale, Inc.",
+  "dependencies": {
   },
-  "suggestions": {
-  },
-  "long_description": "",
-  "groupings": {
-  },
-  "attributes": {
-    "app_inmobi_debinst/service": {
-      "display_name": "Mention the generic service name.",
-      "required": "required",
-      "type": "string",
-      "choice": [
-
-      ],
-      "default": null,
-      "recipes": [
-
-      ],
-      "calculated": false,
-      "description": "This name will be used as init.d service name if start-stop commands are not mentioned"
-    },
-    "app_inmobi_debinst/stopcmd": {
-      "display_name": "Mention the complete command used to stop the service",
-      "required": "optional",
-      "type": "string",
-      "choice": [
-
-      ],
-      "default": null,
-      "recipes": [
-
-      ],
-      "calculated": false,
-      "description": "Eg: svc -d /etc/service-puppet"
-    },
-    "app_inmobi_debinst/startcmd": {
-      "display_name": "Mention the complete command used to start the service",
-      "required": "optional",
-      "type": "string",
-      "choice": [
-
-      ],
-      "default": null,
-      "recipes": [
-
-      ],
-      "calculated": false,
-      "description": "Eg: svc -u /etc/service-puppet"
-    },
-    "app_admin/django_debians": {
-      "display_name": "comma separated Django admin packages with version",
-      "required": "recommended",
-      "type": "string",
-      "choice": [
-
-      ],
-      "recipes": [
-        "app_admin::debinst"
-      ],
-      "calculated": false,
-      "description": "comma separated Django admin packages with version"
-    },
-    "app_admin/function": {
-      "display_name": "which admin M2 or M3",
-      "required": "required",
-      "type": "string",
-      "choice": [
-        "M2",
-        "M3"
-      ],
-      "recipes": [
-        "app_admin::default"
-      ],
-      "calculated": false,
-      "description": "whether admin m2 or m3"
-    },
-    "app_inmobi_debinst/restart": {
-      "display_name": "Mention if service needs to be restarted after debian installations",
-      "required": "optional",
-      "type": "string",
-      "choice": [
-        "true",
-        "false"
-      ],
-      "default": "true",
-      "recipes": [
-
-      ],
-      "calculated": false,
-      "description": "Select if service needs to be restarted after debian installations"
-    },
-    "app_admin/djangobase": {
-      "display_name": "Django base for M2 or M3",
-      "required": "recommended",
-      "type": "string",
-      "choice": [
-
-      ],
-      "recipes": [
-
-      ],
-      "calculated": false,
-      "description": "base dir vaules"
-    }
+  "platforms": {
   },
   "recipes": {
     "app_admin::default": "Install m2 or m3 admin",
     "app_admin::debinst": "Installs admin packages"
   },
-  "recommendations": {
+  "description": "Installs m2 or m3 admin",
+  "name": "app_admin",
+  "suggestions": {
   },
   "maintainer_email": "support@rightscale.com",
-  "dependencies": {
+  "long_description": "",
+  "version": "0.0.1",
+  "groupings": {
   },
-  "license": "Copyright RightScale, Inc. All rights reserved.",
-  "maintainer": "RightScale, Inc.",
+  "attributes": {
+    "app_admin/djangobase": {
+      "display_name": "Django base for M2 or M3",
+      "recipes": [
+
+      ],
+      "description": "base dir vaules",
+      "type": "string",
+      "calculated": false,
+      "required": "recommended",
+      "choice": [
+
+      ]
+    },
+    "app_admin/function": {
+      "display_name": "which admin M2 or M3",
+      "recipes": [
+        "app_admin::default"
+      ],
+      "description": "whether admin m2 or m3",
+      "type": "string",
+      "calculated": false,
+      "required": "required",
+      "choice": [
+        "M2",
+        "M3"
+      ]
+    },
+    "app_inmobi_debinst/service": {
+      "display_name": "Mention the generic service name.",
+      "recipes": [
+
+      ],
+      "description": "This name will be used as init.d service name if start-stop commands are not mentioned",
+      "default": null,
+      "type": "string",
+      "calculated": false,
+      "required": "required",
+      "choice": [
+
+      ]
+    },
+    "app_inmobi_debinst/stopcmd": {
+      "display_name": "Mention the complete command used to stop the service",
+      "recipes": [
+
+      ],
+      "description": "Eg: svc -d /etc/service-puppet",
+      "default": null,
+      "type": "string",
+      "calculated": false,
+      "required": "optional",
+      "choice": [
+
+      ]
+    },
+    "app_inmobi_debinst/startcmd": {
+      "display_name": "Mention the complete command used to start the service",
+      "recipes": [
+
+      ],
+      "description": "Eg: svc -u /etc/service-puppet",
+      "default": null,
+      "type": "string",
+      "calculated": false,
+      "required": "optional",
+      "choice": [
+
+      ]
+    },
+    "app_inmobi_debinst/restart": {
+      "display_name": "Mention if service needs to be restarted after debian installations",
+      "recipes": [
+
+      ],
+      "description": "Select if service needs to be restarted after debian installations",
+      "default": "true",
+      "type": "string",
+      "calculated": false,
+      "required": "optional",
+      "choice": [
+        "true",
+        "false"
+      ]
+    },
+    "app_admin/django_debians": {
+      "display_name": "comma separated Django admin packages with version",
+      "recipes": [
+        "app_admin::debinst"
+      ],
+      "description": "comma separated Django admin packages with version",
+      "type": "string",
+      "calculated": false,
+      "required": "recommended",
+      "choice": [
+
+      ]
+    }
+  },
+  "replacing": {
+  },
+  "recommendations": {
+  },
   "conflicting": {
   },
-  "platforms": {
-  },
-  "description": "Installs m2 or m3 admin"
+  "license": "Copyright RightScale, Inc. All rights reserved."
 }

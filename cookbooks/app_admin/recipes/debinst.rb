@@ -26,13 +26,11 @@ end
        log "installing #{p} #{v}"
        package p do
           version "#{v}"
-          options "--force-yes"
           notifies :restart , resources(:service => "#{node[:app_admin][:service]}") unless node[:app_admin][:restart] == "false"
        end
     else
        log "Package is #{p} and version is not defined"
        package p
-       options "--force-yes"
        notifies :restart , resources(:service => "#{node[:app_admin][:service]}") unless node[:app_admin][:restart] == "false"
     end
   end
