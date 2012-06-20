@@ -18,7 +18,6 @@ rightscale_marker :begin
        package p
     end
   end
-end
 
 service "django" do
  action :start
