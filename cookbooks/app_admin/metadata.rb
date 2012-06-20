@@ -6,6 +6,7 @@ long_description IO.read(File.join(File.dirname(__FILE__), 'README.rdoc'))
 version          "0.0.1"
 
 recipe  "app_admin::default", "Install m2 or m3 admin"
+recipe  "app_admin::debinst", "Installs admin packages"
 
 attribute "app_admin/function",
   :display_name => "which admin M2 or M3",
