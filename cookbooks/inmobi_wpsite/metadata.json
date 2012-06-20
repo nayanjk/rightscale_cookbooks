@@ -1,29 +1,29 @@
 {
-  "maintainer": "YOUR_COMPANY_NAME",
-  "recipes": {
+  "version": "0.0.1",
+  "groupings": {
+  },
+  "license": "All rights reserved",
+  "maintainer_email": "YOUR_EMAIL",
+  "providing": {
   },
   "suggestions": {
   },
-  "recommendations": {
+  "name": "inmobi_wpsite",
+  "recipes": {
   },
-  "description": "Installs/Configures inmobi_wpsite",
-  "attributes": {
-  },
-  "replacing": {
-  },
-  "providing": {
+  "maintainer": "YOUR_COMPANY_NAME",
+  "platforms": {
   },
   "conflicting": {
   },
+  "replacing": {
+  },
   "dependencies": {
   },
-  "license": "All rights reserved",
-  "platforms": {
+  "attributes": {
   },
-  "maintainer_email": "YOUR_EMAIL",
   "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
-  "name": "inmobi_wpsite",
-  "version": "0.0.1",
-  "groupings": {
-  }
+  "recommendations": {
+  },
+  "description": "Installs/Configures inmobi_wpsite"
 }
