@@ -23,9 +23,17 @@ execute "setting mysql preeseed " do
 
 log "installing mysql package"
 
-package node['inmobi_wpsite']['package_name'] do
+node[:inmobi_wpsite][:packages] = [
+   "mkhoj-base",
+   "mysql-server5.1",
+  ]
+
+inmobi_wpsite "install_packages" do
+   persist true
+   packages node[:inmobi_wpsite][:packages]
    action :install
    end
+
 
 inmobi_wpsite "install wpmu" do
    persist true
