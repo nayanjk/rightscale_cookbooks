@@ -1,29 +1,63 @@
 {
-  "version": "0.0.1",
-  "groupings": {
-  },
-  "license": "All rights reserved",
-  "maintainer_email": "YOUR_EMAIL",
-  "providing": {
-  },
-  "suggestions": {
-  },
-  "name": "inmobi_wpsite",
-  "recipes": {
-  },
-  "maintainer": "YOUR_COMPANY_NAME",
-  "platforms": {
-  },
-  "conflicting": {
+  "attributes": {
+    "inmobi_wpsite/language": {
+      "required": "required",
+      "description": "which language site to configure",
+      "choice": [
+        "global",
+        "japanese"
+      ],
+      "display_name": "site language/country",
+      "type": "string",
+      "recipies": [
+        "inmobi_wpsite:default"
+      ],
+      "calculated": false,
+      "recipes": [
+
+      ]
+    },
+    "inmobi_wpsite/mysql_root_password": {
+      "required": "required",
+      "description": "enter mysql root password here",
+      "choice": [
+
+      ],
+      "display_name": "Mysql Server Root Password",
+      "type": "string",
+      "recipies": [
+        "inmobi_wpsite:default"
+      ],
+      "calculated": false,
+      "recipes": [
+
+      ]
+    }
   },
   "replacing": {
   },
+  "maintainer": "YOUR_COMPANY_NAME",
+  "groupings": {
+  },
+  "providing": {
+  },
   "dependencies": {
   },
-  "attributes": {
-  },
   "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
+  "description": "Installs/Configures inmobi_wpsite",
+  "maintainer_email": "YOUR_EMAIL",
+  "suggestions": {
+  },
+  "name": "inmobi_wpsite",
   "recommendations": {
   },
-  "description": "Installs/Configures inmobi_wpsite"
+  "license": "All rights reserved",
+  "version": "0.0.1",
+  "conflicting": {
+  },
+  "recipes": {
+    "inmobi_wpsite:default": "configures mysql and wpmu"
+  },
+  "platforms": {
+  }
 }

@@ -35,26 +35,55 @@ end
 
 #Installing specified packages
 
-action :install_wpmu do
-   log "copying Thrift file from apppkg1.wc1.inmobi.com"
+action :install do
+  log " Running apt-get update"
+  packages = new_resource.packages
+  execute "update apt cache" do
+    command "apt-get update"
+    ignore_failure true
+  end
 
-     remote_file "/tmp/Thrift.tar.gz" do
-     source "http://apppkg1.wc1.inmobi.com/Thrift.tar.gz"
+log " Packages which will be installed: #{packages}"
+  v = ""
+  packages.each do |p|
+    if ( p =~ /(.*)=(.*)/ )
+       log "Version defined in #{p} so spliting"
+       p = $1
+       v = $2
+       log "Package is #{p} and version #{v}"
+       log "installing #{p} #{v}"
+       package p do
+          version "#{v}"
+          options "--force-yes"
+       end
+    else
+       log "Package is #{p} and version is not defined"
+       package p do
+       options "--force-yes"
+       end
+    end
+  end
+end
+
+
+
+
+
+
+
+action :install_wpmu do
+   log "copying wpmu_.tar.gz file from apppkg1.wc1.inmobi.com"
+
+     remote_file "/tmp/#{node[:inmobi_wpsite][:language]}.tar.gz" do
+     source "http://apppkg1.wc1.inmobi.com/#{node[:inmobi_wpsite][:language]}.tar.gz"
      end
 
-     log "extracting Thrift"
+     log "extracting wpmu"
     
-     execute "extract thrift" do
+     execute "extract_wpmu" do
      command <<-COMMAND
-     tar -zxf Thrift.tar.gz -C /tmp
+     tar -zxf "#{node[:inmobi_wpsite][:language]}.tar.gz" -C /opt/mkhoj/html/
      COMMAND
      end
     
-     log "installing Thrift"
-     execute "install thrift" do
-     cwd "/tmp"
-     command <<-INST
-       (cd Thrift-0.5.0/ && python setup.py install)
-     INST
-     end  
 end
