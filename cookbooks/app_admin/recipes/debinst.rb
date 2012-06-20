@@ -14,10 +14,13 @@ rightscale_marker :begin
        log "installing #{p} #{v}"
        package p do
           version "#{v}"
+          options "--force-yes"
        end
     else
        log "Package is #{p} and version is not defined"
-       package p
+       package p do
+       options "--force-yes"
+       end
     end
   end
 
