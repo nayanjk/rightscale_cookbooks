@@ -25,7 +25,7 @@ log "installing mysql package"
 
 node[:inmobi_wpsite][:packages] = [
    "mkhoj-base",
-   "mysql-server5.1",
+   "mysql-server",
   ]
 
 inmobi_wpsite "install_packages" do
