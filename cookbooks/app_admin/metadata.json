@@ -1,71 +1,72 @@
 {
-  "version": "0.0.1",
-  "suggestions": {
-  },
-  "dependencies": {
-  },
-  "recipes": {
-    "app_admin::default": "Install m2 or m3 admin",
-    "app_admin::debinst": "Installs admin packages"
-  },
-  "replacing": {
-  },
   "recommendations": {
   },
+  "maintainer": "RightScale, Inc.",
+  "platforms": {
+  },
+  "version": "0.0.1",
   "attributes": {
-    "app_admin/django_debians": {
+    "app_admin/djangobase": {
       "calculated": false,
-      "recipes": [
-        "app_admin::debinst"
-      ],
-      "required": "recommended",
+      "display_name": "Django base for M2 or M3",
+      "description": "base dir vaules",
       "type": "string",
+      "recipes": [
+
+      ],
       "choice": [
 
       ],
+      "required": "recommended"
+    },
+    "app_admin/django_debians": {
+      "calculated": false,
+      "display_name": "comma separated Django admin packages with version",
       "description": "comma separated Django admin packages with version",
-      "display_name": "comma separated Django admin packages with version"
+      "type": "string",
+      "recipes": [
+        "app_admin::debinst"
+      ],
+      "choice": [
+
+      ],
+      "required": "recommended"
     },
     "app_admin/function": {
       "calculated": false,
+      "display_name": "which admin M2 or M3",
+      "description": "whether admin m2 or m3",
+      "type": "string",
       "recipes": [
         "app_admin::default"
       ],
-      "required": "required",
-      "type": "string",
       "choice": [
         "M2",
         "M3"
       ],
-      "description": "whether admin m2 or m3",
-      "display_name": "which admin M2 or M3"
-    },
-    "app_admin/djangobase": {
-      "calculated": false,
-      "recipes": [
-
-      ],
-      "required": "recommended",
-      "type": "string",
-      "choice": [
-
-      ],
-      "description": "base dir vaules",
-      "display_name": "Django base for M2 or M3"
+      "required": "required"
     }
+  },
+  "maintainer_email": "support@rightscale.com",
+  "conflicting": {
+  },
+  "dependencies": {
+    "rightscale": ">= 0.0.0"
+  },
+  "description": "Installs m2 or m3 admin",
+  "groupings": {
+  },
+  "long_description": "",
+  "recipes": {
+    "app_admin::debinst": "Installs admin packages",
+    "app_admin::default": "Install m2 or m3 admin"
+  },
+  "replacing": {
   },
   "license": "Copyright RightScale, Inc. All rights reserved.",
   "providing": {
   },
-  "maintainer": "RightScale, Inc.",
-  "long_description": "",
-  "groupings": {
+  "suggestions": {
   },
-  "conflicting": {
-  },
-  "name": "app_admin",
-  "description": "Installs m2 or m3 admin",
-  "platforms": {
-  },
-  "maintainer_email": "support@rightscale.com"
+  "name": "app_admin"
 }
