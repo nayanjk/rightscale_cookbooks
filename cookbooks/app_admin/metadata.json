@@ -1,71 +1,128 @@
 {
-  "replacing": {
-  },
-  "dependencies": {
+  "providing": {
   },
   "attributes": {
     "app_admin/django_debians": {
-      "choice": [
-
-      ],
-      "type": "string",
-      "required": "recommended",
-      "display_name": "comma separated Django admin packages with version",
-      "calculated": false,
       "recipes": [
         "app_admin::debinst"
       ],
-      "description": "comma separated Django admin packages with version"
-    },
-    "app_admin/djangobase": {
+      "type": "string",
+      "description": "comma separated Django admin packages with version",
+      "calculated": false,
       "choice": [
 
       ],
-      "type": "string",
-      "required": "recommended",
-      "display_name": "Django base for M2 or M3",
-      "calculated": false,
-      "recipes": [
-
-      ],
-      "description": "base dir vaules"
+      "display_name": "comma separated Django admin packages with version",
+      "required": "recommended"
     },
     "app_admin/function": {
+      "recipes": [
+        "app_admin::default"
+      ],
+      "type": "string",
+      "description": "whether admin m2 or m3",
       "choice": [
         "M2",
         "M3"
       ],
-      "type": "string",
-      "required": "required",
-      "display_name": "which admin M2 or M3",
       "calculated": false,
+      "display_name": "which admin M2 or M3",
+      "required": "required"
+    },
+    "app_inmobi_debinst/stopcmd": {
+      "default": null,
       "recipes": [
-        "app_admin::default"
+
       ],
-      "description": "whether admin m2 or m3"
+      "type": "string",
+      "description": "Eg: svc -d /etc/service-puppet",
+      "calculated": false,
+      "choice": [
+
+      ],
+      "display_name": "Mention the complete command used to stop the service",
+      "required": "optional"
+    },
+    "app_inmobi_debinst/service": {
+      "default": null,
+      "recipes": [
+
+      ],
+      "type": "string",
+      "description": "This name will be used as init.d service name if start-stop commands are not mentioned",
+      "calculated": false,
+      "choice": [
+
+      ],
+      "display_name": "Mention the generic service name.",
+      "required": "required"
+    },
+    "app_inmobi_debinst/restart": {
+      "default": "true",
+      "recipes": [
+
+      ],
+      "type": "string",
+      "description": "Select if service needs to be restarted after debian installations",
+      "choice": [
+        "true",
+        "false"
+      ],
+      "calculated": false,
+      "display_name": "Mention if service needs to be restarted after debian installations",
+      "required": "optional"
+    },
+    "app_inmobi_debinst/startcmd": {
+      "default": null,
+      "recipes": [
+
+      ],
+      "type": "string",
+      "description": "Eg: svc -u /etc/service-puppet",
+      "calculated": false,
+      "choice": [
+
+      ],
+      "display_name": "Mention the complete command used to start the service",
+      "required": "optional"
+    },
+    "app_admin/djangobase": {
+      "recipes": [
+
+      ],
+      "type": "string",
+      "description": "base dir vaules",
+      "calculated": false,
+      "choice": [
+
+      ],
+      "display_name": "Django base for M2 or M3",
+      "required": "recommended"
     }
   },
-  "long_description": "",
-  "groupings": {
+  "replacing": {
   },
-  "recommendations": {
-  },
-  "version": "0.0.1",
   "recipes": {
     "app_admin::default": "Install m2 or m3 admin",
     "app_admin::debinst": "Installs admin packages"
   },
+  "conflicting": {
+  },
+  "license": "Copyright RightScale, Inc. All rights reserved.",
   "suggestions": {
+  },
+  "description": "Installs m2 or m3 admin",
+  "recommendations": {
+  },
+  "dependencies": {
   },
   "platforms": {
   },
-  "license": "Copyright RightScale, Inc. All rights reserved.",
-  "providing": {
-  },
-  "name": "app_admin",
-  "conflicting": {
-  },
-  "maintainer_email": "support@rightscale.com",
   "maintainer": "RightScale, Inc.",
-  "description": "Installs m2 or m3 admin"
+  "long_description": "",
+  "name": "app_admin",
+  "version": "0.0.1",
+  "groupings": {
+  },
+  "maintainer_email": "support@rightscale.com"
 }

@@ -28,3 +28,30 @@ attribute "app_admin/django_debians",
   :type => "string",
   :recipes => ["app_admin::debinst"],
   :required => "recommended"
+
+
+attribute "app_inmobi_debinst/service",
+  :display_name => "Mention the generic service name.",
+  :description => "This name will be used as init.d service name if start-stop commands are not mentioned",
+  :required => true,
+  :default => nil
+
+
+attribute "app_inmobi_debinst/restart",
+  :display_name => "Mention if service needs to be restarted after debian installations",
+  :description => "Select if service needs to be restarted after debian installations",
+  :required => "optional",
+  :default => "true",
+  :choice => ["true","false"]
+
+attribute "app_inmobi_debinst/startcmd",
+  :display_name => "Mention the complete command used to start the service",
+  :description => "Eg: svc -u /etc/service-puppet",
+  :required => "optional",
+  :default => nil
+
+attribute "app_inmobi_debinst/stopcmd",
+  :display_name => "Mention the complete command used to stop the service",
+  :description => "Eg: svc -d /etc/service-puppet",
+  :required => "optional",
+  :default => nil
