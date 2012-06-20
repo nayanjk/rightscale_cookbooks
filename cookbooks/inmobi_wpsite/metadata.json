@@ -1,0 +1,29 @@
+{
+  "maintainer": "YOUR_COMPANY_NAME",
+  "recipes": {
+  },
+  "suggestions": {
+  },
+  "recommendations": {
+  },
+  "description": "Installs/Configures inmobi_wpsite",
+  "attributes": {
+  },
+  "replacing": {
+  },
+  "providing": {
+  },
+  "conflicting": {
+  },
+  "dependencies": {
+  },
+  "license": "All rights reserved",
+  "platforms": {
+  },
+  "maintainer_email": "YOUR_EMAIL",
+  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
+  "name": "inmobi_wpsite",
+  "version": "0.0.1",
+  "groupings": {
+  }
+}
