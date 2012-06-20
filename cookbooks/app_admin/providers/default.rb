@@ -42,12 +42,22 @@ action :install do
     ignore_failure true
   end
 
-  log " Packages which will be installed: #{packages}"
-  packages .each do |p|
-    log "Installing package #{p}"
-    package p do
-      options "--force-yes"
-      action :install
+log " Packages which will be installed: #{packages}"
+  v = ""
+  packages.each do |p|
+    if ( p =~ /(.*)=(.*)/ )
+       log "Version defined in #{p} so spliting"
+       p = $1
+       v = $2
+       log "Package is #{p} and version #{v}"
+       log "installing #{p} #{v}"
+       package p do
+          version "#{v}"
+          options "--force-yes"
+       end
+    else
+       log "Package is #{p} and version is not defined"
+       package p
     end
   end
 end
