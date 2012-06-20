@@ -30,7 +30,7 @@ attribute "app_admin/django_debians",
   :required => "recommended"
 
 
-attribute "app_inmobi_debinst/restart",
+attribute "app_admin/restart",
   :display_name => "Mention if service needs to be restarted after debian installations",
   :description => "Select if service needs to be restarted after debian installations",
   :required => "optional",
