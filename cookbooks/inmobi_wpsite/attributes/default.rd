@@ -1,1 +1,2 @@
-default['inmobi_wpsite']['package_name'] = "mysql-server5.1"
+set_unless[:inmobi_wpsite][:langauage] = " "
+set_unless[:inmobi_wpsite][:mysql_root_password] = " "

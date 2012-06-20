@@ -1,7 +1,42 @@
 {
+  "suggestions": {
+  },
+  "description": "Installs/Configures inmobi_wpsite",
+  "recipes": {
+    "inmobi_wpsite::default": "configures mysql and wpmu"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "maintainer": "YOUR_COMPANY_NAME",
+  "conflicting": {
+  },
+  "license": "All rights reserved",
   "attributes": {
+    "inmobi_wpsite/mysql_root_password": {
+      "description": "enter mysql root password here",
+      "type": "string",
+      "recipes": [
+
+      ],
+      "display_name": "Mysql Server Root Password",
+      "recipies": [
+        "inmobi_wpsite:default"
+      ],
+      "calculated": false,
+      "choice": [
+
+      ],
+      "required": "required"
+    },
     "inmobi_wpsite/language": {
-      "required": "required",
+      "description": "which language site to configure",
+      "type": "string",
+      "recipes": [
+
+      ],
+      "display_name": "site language/country",
       "recipies": [
         "inmobi_wpsite:default"
       ],
@@ -9,55 +44,20 @@
         "global",
         "japanese"
       ],
-      "recipes": [
-
-      ],
       "calculated": false,
-      "type": "string",
-      "description": "which language site to configure",
-      "display_name": "site language/country"
-    },
-    "inmobi_wpsite/mysql_root_password": {
-      "required": "required",
-      "recipies": [
-        "inmobi_wpsite:default"
-      ],
-      "choice": [
-
-      ],
-      "recipes": [
-
-      ],
-      "calculated": false,
-      "type": "string",
-      "description": "enter mysql root password here",
-      "display_name": "Mysql Server Root Password"
+      "required": "required"
     }
   },
-  "name": "inmobi_wpsite",
   "replacing": {
   },
-  "license": "All rights reserved",
-  "recipes": {
-    "inmobi_wpsite:default": "configures mysql and wpmu"
+  "version": "0.0.1",
+  "platforms": {
+  },
+  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
+  "name": "inmobi_wpsite",
+  "providing": {
   },
   "groupings": {
   },
-  "conflicting": {
-  },
-  "platforms": {
-  },
-  "maintainer_email": "YOUR_EMAIL",
-  "suggestions": {
-  },
-  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
-  "description": "Installs/Configures inmobi_wpsite",
-  "version": "0.0.1",
-  "recommendations": {
-  },
-  "dependencies": {
-  },
-  "maintainer": "YOUR_COMPANY_NAME",
-  "providing": {
-  }
+  "maintainer_email": "YOUR_EMAIL"
 }
