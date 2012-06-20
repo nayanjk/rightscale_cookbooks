@@ -1,5 +1,4 @@
 rightscale_marker :begin
-action :install do
   packages = node[:app_admin][:django_debians]
   packages.gsub(/\s+/, "").split(",").uniq.each do |p|
 
