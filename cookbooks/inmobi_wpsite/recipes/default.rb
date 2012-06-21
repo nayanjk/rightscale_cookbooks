@@ -34,12 +34,18 @@ template "/tmp/mysql.preseed" do
 #   command "bash /tmp/mysql.preseed"
 #   action :nothing
 #   end
-bash "setting_mysql_preseed" do
-    code<<-EOF
-    cmd="/tmp/mysql.preseed"
-    $cmd
-    EOF
-    end
+
+
+script "setting mysql preseed" do
+  interpreter "bash"
+  user "root"
+  cwd "/tmp"
+  code <<-EOH
+  ./mysql.preseed
+  EOH
+end
+
+
 
 node[:inmobi_wpsite][:packages] = [
    "mysql-server",
