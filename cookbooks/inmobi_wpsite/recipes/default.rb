@@ -31,7 +31,7 @@ template "/tmp/mysql.preseed" do
    mode "0755"
    end
 execute "setting mysql preseed " do
-   command "/tmp/mysql.preseed"
+   command "bash /tmp/mysql.preseed"
    action :nothing
    end
 
@@ -59,7 +59,7 @@ template "/tmp/setup_mysql_mpmu.sh" do
    mode "0755"
    end
 execute "setting mysql wpmu data " do
-   command "/tmp/setup_mysql_wpmu.sh"
+   command "bash /tmp/setup_mysql_wpmu.sh"
    action :nothing
    end
 
