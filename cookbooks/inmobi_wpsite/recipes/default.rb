@@ -60,7 +60,7 @@ inmobi_wpsite "install_packages" do
 
 log "setting required mysql data for wpmu"
 
-template "/tmp/setup_mysql_mpmu.sh" do
+template "/tmp/setup_mysql_wpmu.sh" do
    source "setup_mysql_wpmu.sh.erb"
    owner "root"
    mode "0755"
@@ -71,7 +71,7 @@ script "setting mysql data wpmu" do
   user "root"
   cwd "/tmp"
   code <<-EOH
-  ./setup_mysql_mpmu.sh
+  ./setup_mysql_wpmu.sh
   EOH
 end
 
