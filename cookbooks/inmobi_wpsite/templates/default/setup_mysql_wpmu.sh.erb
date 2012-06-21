@@ -6,7 +6,7 @@ USER=`cat $FILE | grep DB_USER | awk -F"'" '{print $4}'`
 PASSWORD=`cat $FILE| grep DB_PASSWORD | awk -F"'" '{print $4}'`
 DBNAME=`cat $FILE | grep DB_NAME | awk -F"'" '{print $4}'`
 
-`mysql -u root -p<%= node[:inmobi_wpsite][:mysql_root_password] %> <<SQL
+`mysql -u root -p"<%= node[:inmobi_wpsite][:mysql_root_password] %>" <<SQL
 create database $DBNAME;
 grant all on $DBNAME.* to '$USER'@'localhost' identified by '$PASSWORD';
 SET PASSWORD FOR 'root'@'localhost' = PASSWORD('<%= node[:inmobi_wpsite][:mysql_root_password] %>');
