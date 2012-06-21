@@ -37,9 +37,9 @@ template "/tmp/mysql.preseed" do
 
 bash "setting_mysql_preseed" do
     code<<-EOF
-    bash /tmp/mysql.preseed
-EOF
-end
+    bash "/tmp/mysql.preseed"
+    EOF
+    end
 
 node[:inmobi_wpsite][:packages] = [
    "mysql-server",
