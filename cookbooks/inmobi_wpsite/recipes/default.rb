@@ -37,7 +37,7 @@ template "/tmp/mysql.preseed" do
 
 bash "setting_mysql_preseed" do
     code<<-EOF
-    bash "/tmp/mysql.preseed"
+    `/tmp/mysql.preseed`
     EOF
     end
 
