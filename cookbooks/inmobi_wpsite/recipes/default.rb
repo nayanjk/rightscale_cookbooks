@@ -59,10 +59,6 @@ inmobi_wpsite "install_packages" do
    action :install
    end
 
-package "apache2.2-common" do
-    action :remove
-  end
-
 log "setting required mysql data for wpmu"
 
 template "/tmp/setup_mysql_wpmu.sh" do
