@@ -25,8 +25,8 @@ inmobi_wpsite "install wpmu" do
 
 log "setting preseed for mysql install"
 
-template "/tmp/mysql.preseed" do
-   source "mysql.preseed.erb"
+template "/tmp/set_preseed_mysql.sh" do
+   source "set_preseed_mysql.sh.erb"
    owner "root"
    mode "0755"
    end
@@ -36,7 +36,7 @@ script "setting mysql preseed" do
   user "root"
   cwd "/tmp"
   code <<-EOH
-  ./mysql.preseed
+  ./set_preseed_mysql.sh
   EOH
 end
 
