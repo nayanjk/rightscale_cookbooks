@@ -30,11 +30,6 @@ template "/tmp/mysql.preseed" do
    owner "root"
    mode "0755"
    end
-#execute "setting mysql preseed " do
-#   command "bash /tmp/mysql.preseed"
-#   action :nothing
-#   end
-
 
 script "setting mysql preseed" do
   interpreter "bash"
@@ -70,10 +65,14 @@ template "/tmp/setup_mysql_mpmu.sh" do
    owner "root"
    mode "0755"
    end
-#execute "setting mysql wpmu data " do
-#   command "bash /tmp/setup_mysql_wpmu.sh"
-#   action :nothing
-#   end
 
+script "setting mysql data wpmu" do
+  interpreter "bash"
+  user "root"
+  cwd "/tmp"
+  code <<-EOH
+  ./setup_mysql_mpmu.sh
+  EOH
+end
 
 rightscale_marker :end

@@ -8,13 +8,6 @@
 #
 case node[:platform]
 when "ubuntu","debian"
-  package "php5" do
-    action :install
-  end
-end
-
-case node[:platform]
-when "ubuntu","debian"
   package "php5-cgi" do
     action :install
   end
