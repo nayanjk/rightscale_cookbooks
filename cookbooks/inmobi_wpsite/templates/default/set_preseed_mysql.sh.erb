@@ -1,4 +1,4 @@
-PASSWD="<%= node[:inmobi_wpsite][:mysql_root_password] %>"
+PASSWD=<%= node[:inmobi_wpsite][:mysql_root_password] %>
 echo "mysql-server-5.1 mysql-server/root_password password $PASSWD" > /tmp/preseed.tmp
 echo "mysql-server-5.1 mysql-server/root_password_again password $PASSWD" >> /tmp/preseed.tmp
 echo "mysql-server-5.1 mysql-server/start_on_boot boolean true" >> /tmp/preseed.tmp
