@@ -30,24 +30,30 @@ template "/tmp/mysql.preseed" do
    owner "root"
    mode "0755"
    end
-execute "setting mysql preseed " do
-   command "bash /tmp/mysql.preseed"
-   action :nothing
-   end
-
-#node[:inmobi_wpsite][:packages] = [
-#   "mysql-server",
-#   "mkhoj-base",
-#  ]
-
-#log "installing mysql package"
-
-
-#inmobi_wpsite "install_packages" do
-#   persist true
-#   packages node[:inmobi_wpsite][:packages]
-#   action :install
+#execute "setting mysql preseed " do
+#   command "bash /tmp/mysql.preseed"
+#   action :nothing
 #   end
+
+bash "setting_mysql_preseed" do
+    code<<-EOF
+    bash /tmp/mysql.preseed
+EOF
+end
+
+node[:inmobi_wpsite][:packages] = [
+   "mysql-server",
+   "mkhoj-base",
+  ]
+
+log "installing mysql package"
+
+
+inmobi_wpsite "install_packages" do
+   persist true
+   packages node[:inmobi_wpsite][:packages]
+   action :install
+   end
 
 
 
@@ -58,10 +64,10 @@ template "/tmp/setup_mysql_mpmu.sh" do
    owner "root"
    mode "0755"
    end
-execute "setting mysql wpmu data " do
-   command "bash /tmp/setup_mysql_wpmu.sh"
-   action :nothing
-   end
+#execute "setting mysql wpmu data " do
+#   command "bash /tmp/setup_mysql_wpmu.sh"
+#   action :nothing
+#   end
 
 
 rightscale_marker :end
