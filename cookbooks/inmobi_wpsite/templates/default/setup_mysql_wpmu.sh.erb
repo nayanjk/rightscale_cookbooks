@@ -1,4 +1,6 @@
-FILE="/opt/mkhoj/html/<%= [:inmobi_wpsite][:wpmu_base] %>/wp-config.php"
+
+BASE="<%= node[:inmobi_wpsite][:wpmu_base] %>"
+FILE="/opt/mkhoj/html/$BASE/wp-config.php"
 if [ -f $FILE ]
 then
 
