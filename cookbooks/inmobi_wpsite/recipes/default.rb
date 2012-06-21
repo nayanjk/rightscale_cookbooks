@@ -31,19 +31,6 @@ template "/tmp/set_preseed_mysql.sh" do
    source "set_preseed_mysql.sh.erb"
    owner "root"
    mode "0755"
-
-   if ( node[:inmobi_wpsite][:language] == "global" )
-  variables({
-    :BASE => "wpmu",
-  })
-  end
-
-  if ( node[:inmobi_wpsite][:language] == "japanese" )
-  variables({
-    :BASE => "wpmu_jp",
-  })
- end
-
 end
 
 script "setting mysql preseed" do
@@ -82,6 +69,20 @@ template "/tmp/setup_mysql_wpmu.sh" do
    source "setup_mysql_wpmu.sh.erb"
    owner "root"
    mode "0755"
+
+   if ( node[:inmobi_wpsite][:language] == "global" )
+  variables({
+    :BASE => "wpmu",
+  })
+  end
+
+  if ( node[:inmobi_wpsite][:language] == "japanese" )
+  variables({
+    :BASE => "wpmu_jp",
+  })
+ end
+   
+
    end
 
 script "setting mysql data wpmu" do
