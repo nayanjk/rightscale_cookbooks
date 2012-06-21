@@ -37,7 +37,7 @@ template "/tmp/mysql.preseed" do
 bash "setting_mysql_preseed" do
     code<<-EOF
     cmd="/tmp/mysql.preseed"
-    $cms
+    $cmd
     EOF
     end
 
