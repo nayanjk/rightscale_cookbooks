@@ -34,5 +34,5 @@ attribute "app_admin/restart",
   :display_name => "Mention if service needs to be restarted after debian installations",
   :description => "Select if service needs to be restarted after debian installations",
   :required => "optional",
-  :default => "true",
+  :default => "false",
   :choice => ["true","false"]

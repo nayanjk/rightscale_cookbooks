@@ -9,6 +9,8 @@
 
 rightscale_marker :begin
 
+log "setting up required directory to host wpmu file"
+
 directory "/opt/mkhoj/html" do
   owner "root"
   mode 0755

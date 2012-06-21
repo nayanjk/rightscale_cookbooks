@@ -28,17 +28,13 @@ rightscale_marker :begin
    service "django" do
    action :restart
    end
-   else
+  end
       if ( node[:app_admin][:restart] == "false" )
            service "django" do
            action :start
            end
-       else
-             service "django" do
-             action :nothing
-             end
-      end
-  end 
+      end             
+
   
 
 rightscale_marker :end
