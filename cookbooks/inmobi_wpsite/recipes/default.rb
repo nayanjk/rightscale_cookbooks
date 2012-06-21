@@ -1,4 +1,4 @@
-#
+
 # Cookbook Name:: inmobi_wpsite
 # Recipe:: default
 #
@@ -31,7 +31,20 @@ template "/tmp/set_preseed_mysql.sh" do
    source "set_preseed_mysql.sh.erb"
    owner "root"
    mode "0755"
-   end
+
+   if ( node[:inmobi_wpsite][:language] == "global" )
+  variables({
+    :BASE => "wpmu",
+  })
+  end
+
+  if ( node[:inmobi_wpsite][:language] == "japanese" )
+  variables({
+    :BASE => "wpmu_jp",
+  })
+ end
+
+end
 
 script "setting mysql preseed" do
   interpreter "bash"
