@@ -35,19 +35,19 @@ execute "setting mysql preseed " do
    action :nothing
    end
 
-node[:inmobi_wpsite][:packages] = [
-   "mysql-server",
-   "mkhoj-base",
-  ]
+#node[:inmobi_wpsite][:packages] = [
+#   "mysql-server",
+#   "mkhoj-base",
+#  ]
 
-log "installing mysql package"
+#log "installing mysql package"
 
 
-inmobi_wpsite "install_packages" do
-   persist true
-   packages node[:inmobi_wpsite][:packages]
-   action :install
-   end
+#inmobi_wpsite "install_packages" do
+#   persist true
+#   packages node[:inmobi_wpsite][:packages]
+#   action :install
+#   end
 
 
 
