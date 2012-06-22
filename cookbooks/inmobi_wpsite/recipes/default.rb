@@ -9,6 +9,12 @@
 
 rightscale_marker :begin
 
+
+execute "down svc" do
+  command "svc -d /etc/service-apt-update"
+  action :run
+end
+
 log "setting up required directory to host wpmu file"
 
 directory "/opt/mkhoj/html" do
