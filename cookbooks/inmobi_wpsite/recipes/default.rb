@@ -47,6 +47,7 @@ end
 node[:inmobi_wpsite][:packages] = [
    "mysql-server",
    "mkhoj-base",
+   "php5-cgi",
    "php5-mysql",
   ]
 
