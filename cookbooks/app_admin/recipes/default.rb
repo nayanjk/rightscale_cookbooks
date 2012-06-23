@@ -30,6 +30,7 @@ when "ubuntu", "debian"
       #"java-gcj-compat-dev",
       "python-psycopg2",            
       "python-flup",
+      "python-pip",
       "mkhoj-base",
       "build-essential",
       "python2.6-dev",

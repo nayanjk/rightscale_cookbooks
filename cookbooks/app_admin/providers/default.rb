@@ -83,7 +83,7 @@ action :install_thrift do
      execute "install thrift" do
      cwd "/tmp"
      command <<-INST
-       (cd Thrift-0.5.0/ && python setup.py install)
+       (cd Thrift-0.5.0/ && python setup.py install && pip install appscheduler)
      INST
      end  
 end
