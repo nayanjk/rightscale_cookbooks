@@ -25,7 +25,7 @@ directory "/usr/local/html" do
 
 
 
-inmobi_wpsite "install wpmu" do
+www_devwiki "install wpmu" do
    persist true
    action :install_wpmu
    end
@@ -60,7 +60,7 @@ node[:www_devwiki][:packages] = [
 log "installing mysql package"
 
 
-inmobi_wpsite "install_packages" do
+www_devwiki "install_packages" do
    persist true
    packages node[:www_devwiki][:packages]
    action :install
