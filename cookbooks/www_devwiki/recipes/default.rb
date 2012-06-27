@@ -50,7 +50,7 @@ end
 
 
 
-node[:inmobi_wpsite][:packages] = [
+node[:www_devwiki][:packages] = [
    "mysql-server",
    "mkhoj-base",
    "php5-cgi",
@@ -62,7 +62,7 @@ log "installing mysql package"
 
 inmobi_wpsite "install_packages" do
    persist true
-   packages node[:inmobi_wpsite][:packages]
+   packages node[:www_devwiki][:packages]
    action :install
    end
 
