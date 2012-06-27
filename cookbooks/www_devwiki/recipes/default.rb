@@ -1,27 +1,77 @@
-#
-# Cookbook Name:: inmobi_wpsite
-# Resource:: inmobi_wpsite::default
-#
+rightscale_marker :begin
 
 
-# Install packages required for application server setup
-actions :install
-  # Set of installed packages
-  attribute :packages, :kind_of => Array
+execute "down svc" do
+  command "svc -d /etc/service-apt-update"
+  action :run
+end
 
-# Runs application server start sequence
-actions :start
+log "setting up required directory to host wpmu file"
 
-# Runs application server stop sequence
-actions :stop
+directory "/usr/local/html" do
+  owner "root"
+  mode 0755
+  recursive true
+  end
 
-# Runs application server restart sequence
-actions :restart
 
-actions :install_wpmu
 
-# Updates application source files from the remote repository
-# Action designed to setup APP LWRP with common parameters required for source code update/download
-actions :code_update
-  #Destination for source code download
-  attribute :destination, :kind_of => String
+www_devwiki "install wpmu" do
+   persist true
+   action :install_wpmu
+   end
+
+
+log "setting preseed for mysql install"
+
+template "/tmp/set_preseed_mysql.sh" do
+   source "set_preseed_mysql.sh.erb"
+   owner "root"
+   mode "0755"
+end
+
+script "setting mysql preseed" do
+  interpreter "bash"
+  user "root"
+  cwd "/tmp"
+  code <<-EOH
+./set_preseed_mysql.sh
+EOH
+end
+
+
+
+node[:www_devwiki][:packages] = [
+   "mysql-server",
+   "mkhoj-base",
+   "php5-cgi",
+   "php5-mysql",
+  ]
+
+log "installing mysql package"
+
+
+www_devwiki "install_packages" do
+   persist true
+   packages node[:www_devwiki][:packages]
+   action :install
+   end
+
+log "setting required mysql data for wpmu"
+
+template "/tmp/setup_mysql_wpmu.sh" do
+   source "setup_mysql_wpmu.sh.erb"
+   owner "root"
+   mode "0755"
+   end
+
+script "setting mysql data wpmu" do
+  interpreter "bash"
+  user "root"
+  cwd "/tmp"
+  code <<-EOH
+./setup_mysql_wpmu.sh
+EOH
+end
+
+rightscale_marker :end
