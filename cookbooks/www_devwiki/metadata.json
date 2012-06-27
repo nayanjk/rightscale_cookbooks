@@ -1,0 +1,30 @@
+{
+  "replacing": {
+  },
+  "platforms": {
+  },
+  "maintainer_email": "YOUR_EMAIL",
+  "description": "Installs/Configures www_devwiki",
+  "name": "www_devwiki",
+  "recipes": {
+    "www_devwiki::default": "Installs dev wiki"
+  },
+  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
+  "suggestions": {
+  },
+  "recommendations": {
+  },
+  "groupings": {
+  },
+  "providing": {
+  },
+  "maintainer": "YOUR_COMPANY_NAME",
+  "version": "0.0.1",
+  "dependencies": {
+  },
+  "conflicting": {
+  },
+  "license": "All rights reserved",
+  "attributes": {
+  }
+}
