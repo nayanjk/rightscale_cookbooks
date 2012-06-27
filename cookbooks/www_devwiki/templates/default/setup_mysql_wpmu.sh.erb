@@ -7,10 +7,10 @@ USER=`cat $FILE | grep wgDBuser | awk -F'"' '{print $2}'`
 PASSWORD=`cat $FILE| grep wgDBpassword  | awk -F'"' '{print $2}'`
 DBNAME=`cat $FILE | grep wgDBname | awk -F'"' '{print $2}'`
 
-`mysql -u root -p"<%= node[:inmobi_wpsite][:mysql_root_password] %>" <<SQL
+`mysql -u root -p"<%= node[:www_devwiki][:mysql_root_password] %>" <<SQL
 create database $DBNAME;
 grant all on $DBNAME.* to '$USER'@'localhost' identified by '$PASSWORD';
-SET PASSWORD FOR 'root'@'localhost' = PASSWORD('<%= node[:inmobi_wpsite][:mysql_root_password] %>');
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('<%= node[:www_devwiki][:mysql_root_password] %>');
 flush privileges;
 quit
 SQL`
