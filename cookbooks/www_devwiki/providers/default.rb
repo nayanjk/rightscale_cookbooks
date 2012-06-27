@@ -71,7 +71,7 @@ end
 
 
 
-action :install_devwpmu do
+action :install_wpmu do
    log "copying wpmu.tar.gz file from apppkg1.wc1.inmobi.com"
 
      remote_file "/tmp/developer_wiki.tar.gz" do

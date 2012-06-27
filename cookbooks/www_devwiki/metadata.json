@@ -1,46 +1,46 @@
 {
   "conflicting": {
   },
-  "recipes": {
-    "www_devwiki::default": "Installs dev wiki"
-  },
   "dependencies": {
-  },
-  "groupings": {
-  },
-  "providing": {
-  },
-  "platforms": {
-  },
-  "suggestions": {
-  },
-  "recommendations": {
-  },
-  "maintainer_email": "YOUR_EMAIL",
-  "name": "www_devwiki",
-  "license": "All rights reserved",
-  "version": "0.0.1",
-  "attributes": {
-    "www_devwiki/mysql_root_password": {
-      "choice": [
-
-      ],
-      "required": "required",
-      "recipes": [
-
-      ],
-      "type": "string",
-      "calculated": false,
-      "description": "enter mysql root password here",
-      "display_name": "Mysql Server Root Password",
-      "recipies": [
-        "www_devwiki:default"
-      ]
-    }
-  },
-  "replacing": {
   },
   "description": "Installs/Configures www_devwiki",
   "maintainer": "YOUR_COMPANY_NAME",
-  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n"
+  "suggestions": {
+  },
+  "attributes": {
+    "www_devwiki/mysql_root_password": {
+      "description": "enter mysql root password here",
+      "display_name": "Mysql Server Root Password",
+      "type": "string",
+      "calculated": false,
+      "choice": [
+
+      ],
+      "recipies": [
+        "www_devwiki:default"
+      ],
+      "recipes": [
+
+      ],
+      "required": "required"
+    }
+  },
+  "recommendations": {
+  },
+  "platforms": {
+  },
+  "version": "0.0.1",
+  "recipes": {
+    "www_devwiki::default": "Installs dev wiki"
+  },
+  "providing": {
+  },
+  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
+  "license": "All rights reserved",
+  "name": "www_devwiki",
+  "groupings": {
+  },
+  "replacing": {
+  },
+  "maintainer_email": "YOUR_EMAIL"
 }
