@@ -1,5 +1,5 @@
 
-# Cookbook Name:: inmobi_wpsite
+# Cookbook Name:: www_devwiki
 #
 # Copyright RightScale, Inc. All rights reserved.  All access and use subject to the
 # RightScale Terms of Service available at http://www.rightscale.com/terms.php and,
