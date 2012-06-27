@@ -18,7 +18,7 @@ actions :stop
 # Runs application server restart sequence
 actions :restart
 
-actions :install_wpmu
+actions :install_devwpmu
 
 # Updates application source files from the remote repository
 # Action designed to setup APP LWRP with common parameters required for source code update/download
