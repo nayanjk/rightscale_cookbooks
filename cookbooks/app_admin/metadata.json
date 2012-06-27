@@ -1,86 +1,86 @@
 {
+  "recommendations": {
+  },
+  "dependencies": {
+  },
+  "maintainer": "RightScale, Inc.",
+  "replacing": {
+  },
+  "maintainer_email": "support@rightscale.com",
+  "name": "app_admin",
+  "suggestions": {
+  },
+  "long_description": "",
   "providing": {
   },
   "conflicting": {
   },
+  "version": "0.0.1",
   "platforms": {
   },
-  "maintainer": "RightScale, Inc.",
+  "groupings": {
+  },
+  "license": "Copyright RightScale, Inc. All rights reserved.",
+  "recipes": {
+    "app_admin::default": "Install m2 or m3 admin",
+    "app_admin::debinst": "Installs admin packages"
+  },
   "attributes": {
     "app_admin/djangobase": {
+      "calculated": false,
       "display_name": "Django base for M2 or M3",
+      "type": "string",
+      "choice": [
+
+      ],
       "required": "recommended",
-      "calculated": false,
-      "choice": [
-
-      ],
       "recipes": [
 
       ],
-      "description": "base dir vaules",
-      "type": "string"
-    },
-    "app_admin/restart": {
-      "display_name": "Mention if service needs to be restarted after debian installations",
-      "default": "false",
-      "required": "optional",
-      "choice": [
-        "true",
-        "false"
-      ],
-      "calculated": false,
-      "recipes": [
-
-      ],
-      "description": "Select if service needs to be restarted after debian installations",
-      "type": "string"
+      "description": "base dir vaules"
     },
     "app_admin/django_debians": {
-      "display_name": "comma separated Django admin packages with version",
-      "required": "recommended",
       "calculated": false,
+      "display_name": "comma separated Django admin packages with version",
+      "type": "string",
       "choice": [
 
       ],
+      "required": "recommended",
       "recipes": [
         "app_admin::debinst"
       ],
-      "description": "comma separated Django admin packages with version",
-      "type": "string"
+      "description": "comma separated Django admin packages with version"
     },
     "app_admin/function": {
+      "calculated": false,
       "display_name": "which admin M2 or M3",
-      "required": "required",
+      "type": "string",
       "choice": [
         "M2",
         "M3"
       ],
-      "calculated": false,
+      "required": "required",
       "recipes": [
         "app_admin::default"
       ],
-      "description": "whether admin m2 or m3",
-      "type": "string"
+      "description": "whether admin m2 or m3"
+    },
+    "app_admin/restart": {
+      "calculated": false,
+      "display_name": "Mention if service needs to be restarted after debian installations",
+      "type": "string",
+      "default": "false",
+      "choice": [
+        "true",
+        "false"
+      ],
+      "required": "optional",
+      "recipes": [
+
+      ],
+      "description": "Select if service needs to be restarted after debian installations"
     }
   },
-  "name": "app_admin",
-  "replacing": {
-  },
-  "recommendations": {
-  },
-  "version": "0.0.1",
-  "dependencies": {
-  },
-  "maintainer_email": "support@rightscale.com",
-  "long_description": "",
-  "recipes": {
-    "app_admin::debinst": "Installs admin packages",
-    "app_admin::default": "Install m2 or m3 admin"
-  },
-  "groupings": {
-  },
-  "suggestions": {
-  },
-  "description": "Installs m2 or m3 admin",
-  "license": "Copyright RightScale, Inc. All rights reserved."
+  "description": "Installs m2 or m3 admin"
 }
