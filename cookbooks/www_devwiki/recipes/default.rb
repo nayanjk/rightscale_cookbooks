@@ -27,7 +27,7 @@ directory "/usr/local/html" do
 
 www_devwiki "install wpmu" do
    persist true
-   action :install_wpmu
+   action :install_devwpmu
    end
 
 
