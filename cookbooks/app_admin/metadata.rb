@@ -6,21 +6,9 @@ long_description IO.read(File.join(File.dirname(__FILE__), 'README.rdoc'))
 version          "0.0.1"
 
 
-recipe  "app_admin::default", "Install m2 or m3 admin"
+recipe  "app_admin::default", "Install m3 admin"
 recipe  "app_admin::debinst", "Installs admin packages"
 
-attribute "app_admin/function",
-  :display_name => "which admin M2 or M3",
-  :description => "whether admin m2 or m3",
-  :choice => ["M2", "M3"],
-  :recipes => ["app_admin::default"],
-  :required => "required"
-
-attribute "app_admin/djangobase",
-  :display_name => "Django base for M2 or M3",
-  :description => "base dir vaules",
-  :type => "string",
-  :required => "recommended"
 
 attribute "app_admin/django_debians",
   :display_name => "comma separated Django admin packages with version",
