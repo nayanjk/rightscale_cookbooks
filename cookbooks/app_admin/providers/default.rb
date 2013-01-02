@@ -83,7 +83,7 @@ action :install_thrift do
      execute "install thrift" do
      cwd "/tmp"
      command <<-INST
-       (cd Thrift-0.5.0/ && python setup.py install && pip install apscheduler)
+       (cd Thrift-0.5.0/ && python setup.py install && pip install apscheduler && pip install beautifulsoup && pip install bittornado && pip install cheetah && pip install gnupginterfacex && pip install thrift && pip install distribute && pip install django-mptt && pip install flup && pip install httplib2 && pip install launchpadlib && pip install lazr.restfulclient && pip install lazr.uri && pip install numpy && pip install oauth && pip install psycopg2 && pip install pyopenssl && pip install pycrypto && pip install python-apt && pip install python-dateutil && pip install simplejson && pip install ufw && pip install unattended-upgrades && pip install wadllib && pip install web.py && pip install wsgiref && pip install zope.interface)
      INST
      end  
 end
