@@ -72,15 +72,15 @@ end
 
 
 action :install_wpmu do
-   log "copying wpmu.tar.gz file from apppkg1.wc1.inmobi.com"
+   log "copying wpmu.tar.gz file from pkg.uj2.inmobi.com"
 
      remote_file "/tmp/developer_wiki.tar.gz" do
-     source "http://apppkg1.wc1.inmobi.com/developer_wiki.tar.gz"
+     source "http://pkg.uj2.inmobi.com:9999/developer_wiki.tar.gz"
      end
 
      
      remote_file "/tmp/developer_wiki.sql" do
-     source "http://apppkg1.wc1.inmobi.com/developer_wiki.sql"
+     source "http://pkg.uj2.inmobi.com:9999/developer_wiki.sql"
      end
 
 
