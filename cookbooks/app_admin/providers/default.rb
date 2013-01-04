@@ -65,10 +65,10 @@ log " Packages which will be installed: #{packages}"
 end
 
 action :install_thrift do
-   log "copying Thrift file from appkg1.ev1.inmobi.com"
+   log "copying Thrift file from pkg.uj2.inmobi.com"
 
      remote_file "/tmp/Thrift.tar.gz" do
-     source "http://appkg1.ev1.inmobi.com/Thrift.tar.gz"
+     source "http://pkg.uj2.inmobi.com:9999/Thrift.tar.gz"
      end
 
      log "extracting Thrift"
